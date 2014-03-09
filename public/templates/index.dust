@@ -1,0 +1,11 @@
+{>"layouts/master" /}
+
+{<body}
+    <h1>Yay, running on Node.js!</h1>
+    <p>To access live scorecard page: <code>{url}</code></p>
+    <!-- <h1>Hello, {@pre type="content" key="greeting"/}</h1> -->
+{/body}
+
+{<title}
+	Welcome to ESPNcricinfo Node.js experiments.
+{/title}

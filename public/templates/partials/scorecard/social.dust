@@ -1,0 +1,28 @@
+<div class="social-comm-section">
+	{?match.live_commentator}
+	<h6>Commentator</h6>
+	<span>{match.live_commentator}</span>
+	{/match.live_commentator}
+	{?match.live_scorer}
+	<h6>Scorer</h6>
+	<span>{match.live_scorer}</span>
+	{/match.live_scorer}
+	<input type="button" style="text-transform: none;" class="commentary-feedback-buttoon palinBut" value="Write to us" />
+	<div class="clearfix"></div>
+	<div id="social-icons" style="float: left; margin-left:5px;">
+		<div class="ci-fb-button" style="float: left; width: 100%;">
+			<div style="margin: 10px 0 0px 5px; overflow: hidden; text-align: left;">
+				<iframe src="//www.facebook.com/plugins/like.php?locale=en_US&amp;href={page_url}&amp;width=100&amp;layout=button_count&amp;action=like&amp;show_faces=false&amp;share=false&amp;height=21&amp;appId=260890547115" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:87px; height:21px;" allowTransparency="true"></iframe>
+			</div>
+		</div>
+		<div class="ci-twt-button" style="float: left; width: 100%;">
+			<div style="margin: 10px 0 10px 5px; overflow: hidden; text-align: left;">
+				<a href="{twt_url}" data-url="{twt_url}" class="twitter-share-button" data-via="ESPNCricinfo">Tweet</a>
+				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+			</div>
+		</div>
+	</div>
+	<hr class="thick-2">
+</div>
+<div id="reports-column">
+</div>

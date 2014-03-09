@@ -1,0 +1,11 @@
+<div class="match-card-block">
+	<ul id="suffleDiv">
+		<li style="text-align:center;">
+			<img style="margin-top:90px;display:inline-block" src="http://i.imgci.com/espncricinfo/mobileweb/smartphone/ajax-loader.gif">
+		</li>
+	</ul>
+	<div class="match-card-nav" id="matchCardNav">
+		<span id="match-card-prev">&nbsp;</span>
+		<span id="match-card-next">&nbsp;</span>
+	</div>
+</div>

@@ -1,0 +1,43 @@
+<tr>
+    <th scope="col" class="match-n-time-head">
+        <span class="match-status-info">{breakInfo}</span>
+        {#matchTimes}
+            <span class="current-time-info"><strong>Current time</strong>
+                {?present_time_local}
+                    {present_time_local} local,
+                {/present_time_local}
+
+                {?present_time_gmt}
+                    {present_time_gmt} GMT
+                {/present_time_gmt}
+
+                {?match_clock}
+                   | Match begins in: {match_clock}
+                {/match_clock}
+            </span>
+        {/matchTimes}
+    </th>
+</tr>
+
+{#teams}
+<tr>
+    <td>
+        <table class="team-{num}" width="100%">
+            <tr>
+                <td class="team-{num}-name">{name} {suffix}</td>
+            </tr>
+            <tr>
+                <td class="player-names">
+                    {#players}
+                        {?card_long}
+                            <a class="bold" href="{url}">{card_long}</a><span class="normal">{roleId|s}</span>{separator}
+                        {:else}
+                            To be announced
+                        {/card_long}
+                    {/players}
+                </td>
+            </tr>
+        </table>
+    </td>
+</tr>
+{/teams}

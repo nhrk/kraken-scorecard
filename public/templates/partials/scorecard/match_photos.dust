@@ -1,0 +1,43 @@
+{@gt key="{match_photos.rows}" value="0"}
+<div class="large-20 columns photos-block" id="photos-block">
+	<h5 class="uppercase">Photos</h2>
+	<div>
+		<div>
+			<ul>
+				<li class="box1">
+					<a href="" data-id="" title="">
+					<img src="" id="imgMain" align="center" >
+					</a>
+				</li>
+			</ul>
+		</div>
+		{@gt key="{match_photos.rows}" value="1"}
+		<div  class="photoes-nav">
+			<a href="#" class="prevBtn pagination-but left-nav prevInactive" >&lsaquo;</a>
+			<a href="#" class="nextBtn pagination-but right-nav" >&rsaquo;</a>
+		</div>
+		{/gt}
+		<div id="imgLoading" style="display: block;">
+			<img src="http://i.imgci.com/espncricinfo/lightbox-ico-loading.gif" align="center" height="32" width="32">
+		</div>
+		<p>
+		<span></span>
+		</p>
+	</div>
+	<div class="photos-list">
+		<ul>
+			<li><a id="firstPhoto" href="javascript:void(0);">Back to Latest Photo</a></li>
+			{! Improve the conditional statement !}
+			{@eq key="{match.url_component}" value="wctimeline"}
+			<li><a href='/ci/content/image/index.html?object={matchId}' target="_blank">All Photos for this match</a></li>
+			<li><a class="no-border" href='/ci/content/gallery/index.html?object={matchId};cat=current' target="_blank">Galleries</a></li>
+			{:else}
+			<li><a href='/{match.url_component}/content/image/index.html?object={matchId}' target="_blank">All Photos for this match</a></li>
+			<li><a class="no-border" href='/{match.url_component}/content/gallery/index.html?object={matchId};cat=current' target="_blank">Galleries</a></li>
+			{/eq}
+		</ul>
+	</div>
+	<hr class="thick-2">
+	<div class="rhscontent-loader"><img style="margin: auto; margin-top: 40px;" src="http://i.imgci.com/espncricinfo/gfx/loading.gif" /></div>
+</div>
+{/gt}

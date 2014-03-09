@@ -1,0 +1,66 @@
+<div id="summary" class="summary-block">
+	<!-- Match Information -->
+	<div class="row brief-summary">
+		<div class="large-14 medium-14 columns innings-information">
+			{teamscores}
+			{#team_names}
+			<div class="team-{@idx}{.}{/idx}-name">{team_name}</div>
+			{/team_names}
+			<div class="innings-requirement">
+				{live.status}
+			</div>
+		</div>
+	</div>
+	<!-- End -->
+	<!-- tie breaker block -->
+	<div id="tiebreaker">
+		<div class="row">
+			<div class="large-20 columns commentary-block">
+			</div>
+		</div>
+	</div>
+	<!-- end -->
+	<!-- Scorecard -->
+	<div class="row">
+		<div class="large 20 columns scorecard">
+			<hr class="border-top-score-squad">
+			<table class="squad-table" width="100%">
+			</table>
+			<table class="score-table" width="100%">
+			</table>
+			<div class="more-match-stats">
+			</div>
+		</div>
+	</div>
+	<!--  End -->
+</div>
+<div id="commentary">
+	<!-- Commentary & Central Thin Colum -->
+	<div class="row">
+		<!-- Commentary -->
+		<div class="large-16 medium-16 columns commentary-block">
+		</div>
+		<div class="large-4 medium-4 columns thin-incontent-block">
+			{>"partials/scorecard/social"/}
+		</div>
+	</div>
+	<div class="row">
+		<!-- filters, comm feedback and social icons start-->
+		<div class="large-16 medium-16 columns filters-block">
+			<hr>
+			<div class="row">
+				<div class="large-12 medium-12 columns">
+					<ul class="inline-list commentary-main-events-links">
+						<li><a href="/{match.url_component}/engine/match/{matchId}.html?innings={match.live_innings_number};type=fours;view=commentary;wrappertype=none{?cluster};cluster={cluster}{/cluster}">Fours</a></li>
+						<li><a href="/{match.url_component}/engine/match/{matchId}.html?innings={match.live_innings_number};type=sixes;view=commentary;wrappertype=none{?cluster};cluster={cluster}{/cluster}">Sixes</a></li>
+						<li class="remove-border-right"><a href="/{match.url_component}/engine/match/{matchId}.html?innings={match.live_innings_number};type=wickets;view=commentary;wrappertype=none{?cluster};cluster={cluster}{/cluster}">Wickets</a></li>
+					</ul>
+				</div>
+				<div class="large-8 medium-8 columns">
+					<a href="#" class="small button radius commentary-feedback-buttoon">Commentary Feedback</a>
+				</div>
+			</div>
+			<hr class="thick-2">
+		</div>
+	</div>
+</div>

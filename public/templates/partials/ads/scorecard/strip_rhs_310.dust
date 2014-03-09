@@ -1,0 +1,33 @@
+{?rhs_310}
+{@eq key="{cluster}" value="ind"}
+<div class="large-10 medium-20 columns text-right underhead-ad-300-1">
+	<a href="http://pubads.g.doubleclick.net/gampad/clk?id=61382697&iu=/6444/espn.cricinfo.nondartserved/clicktracker" target="_blank"><img src="http://i.imgci.com/scorecard/india/SnapDeal_21stFeb_300x40.jpeg" title="Snap Deal" alt="Snap Deal"></a>
+</div>
+<div class="large-10 medium-20 columns text-right underhead-ad-300-2">
+</div>
+{/eq}
+
+{@eq key="{cluster}" value="sl"}
+<div class="large-10 medium-20 columns text-right underhead-ad-300-1">
+	<script language="JavaScript" type="text/javascript">
+	var adsbnew=new Array()
+	adsbnew[0] = '<a href="http://pubads.g.doubleclick.net/gampad/clk?id=68797737&iu=/6444/espn.cricinfo.nondartserved/clicktracker" target="_blank"><img src="http://i.imgci.com/scorecard/sl/320x40_Frigdes.jpg" width="320" height="40" border="0" alt="WOW" title="WOW"></a>';
+	adsbnew[1] = '<a href="http://pubads.g.doubleclick.net/gampad/clk?id=68798217&iu=/6444/espn.cricinfo.nondartserved/clicktracker" target="_blank"><img src="http://i.imgci.com/scorecard/sl/300x40_Phones.jpg" width="320" height="40" border="0" alt="WOW" title="WOW"></a>';
+	adsbnew[2] = '<a href="http://pubads.g.doubleclick.net/gampad/clk?id=68797977&iu=/6444/espn.cricinfo.nondartserved/clicktracker" target="_blank"><img src="http://i.imgci.com/scorecard/sl/300x40_TVs.jpg" width="320" height="40" border="0" alt="WOW" title="WOW"></a>';
+	adsbnew[3] = '<a href="http://pubads.g.doubleclick.net/gampad/clk?id=68798457&iu=/6444/espn.cricinfo.nondartserved/clicktracker" target="_blank"><img src="http://i.imgci.com/scorecard/sl/300x40_Washing-Machines.jpg" width="320" height="40" border="0" alt="WOW" title="WOW"></a>';
+	var flab=Math.floor(Math.random()*adsbnew.length);
+	document.write(adsbnew[flab]);
+	</script>
+</div>
+<div class="large-10 medium-20 columns text-right underhead-ad-300-2">
+</div>
+{/eq}
+
+{@eq key="{cluster}" value="aus"}
+<div class="large-20 columns ad-slot-4">
+	<script language="JavaScript" type="text/javascript">
+	document.write('<script language="JavaScript" src="http://ad.doubleclick.net/N6444/adj/espn.cricinfo.livescorecard/[{ads.url_component};kvcluster={cluster};kvpt={ads.kvpt};kvserobject={ads.kvserobject};kvsite=[{ads.url_component};kvbrand=[{ads.url_component};tile=2;sz=615x40;kvpos={ads.strip_rhs_310.kvpos};adtar={ads.adtar};ord=' + ord + '?" type="text/javascript"><\/script>');
+	</script><noscript><a href="http://ad.doubleclick.net/N6444/jump/espn.cricinfo.livescorecard/[{ads.url_component};kvcluster={cluster};kvpt={ads.kvpt};kvserobject={ads.kvserobject};kvsite=[{ads.url_component};kvbrand=[{ads.url_component};tile=2;sz=615x40;kvpos={ads.strip_rhs_310.kvpos};adtar={ads.adtar};ord=123456789?" target="_blank"><img src="http://ad.doubleclick.net/N6444/ad/espn.cricinfo.livescorecard/[{ads.url_component};kvcluster={cluster};kvpt={ads.kvpt};kvserobject={ads.kvserobject};kvsite=[{ads.url_component};kvbrand=[{ads.url_component};tile=2;sz=615x40;kvpos={ads.strip_rhs_310.kvpos};adtar={ads.adtar};ord=123456789?" width="615" height="40" border="0" alt=""></a></noscript>
+</div>
+{/eq}
+{/rhs_310}

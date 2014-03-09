@@ -1,0 +1,198 @@
+<tr>
+    <th scope="col" class="match-n-time-head">
+        <span class="match-status-info">{breakInfo}</span>
+    </th>
+    <th>
+        {#matchTimes}
+            <span class="current-time-info"><strong>Current time</strong> 
+                {?present_time_local}
+                    {present_time_local} local, 
+                {/present_time_local}
+
+                {?present_time_gmt}
+                    {present_time_gmt} GMT
+                {/present_time_gmt}
+            </span>
+        {/matchTimes}
+    </th>
+    <th scope="col" class="career-head">{format} Career</th>
+</tr>
+<tr>
+    <td  colspan="2">
+        <table class="batsmen" width="100%">
+            <thead>
+                <tr>
+                    <th class="th-batsmen">Batsmen</th>
+                    <th class="th-r">R</th>
+                    <th class="th-b">B</th>
+                    <th class="th-4s">4s</th>
+                    <th class="th-6s">6s</th>
+                    <th class="th-sr">SR</th>
+                    <th class="th-this-bowler">This bowler</th>
+                    {?isFeedback}
+                        <th class="th-last-10-ovs">Last {nOvers} ovs</th>
+                    {/isFeedback}
+                </tr>
+            </thead>
+            <tbody>
+                {#batting}
+                    <tr class="row{num}">
+                        <td class="batsman-{num}-name {currentClass}">
+
+                            {?pageurl}
+                                <a href="{pageurl}" title="{pageTitle}" target="_blank">{name}</a>  
+                            {:else}
+                                {name} 
+                            {/pageurl}
+
+                            {?style}
+                                <span class="type-of-player">({style})</span>
+                            {/style}
+                        </td>
+                        <td class="bold">{runs}</td>
+                        <td>{balls_faced}</td>
+                        <td>{fours}</td>
+                        <td>{sixes}</td>
+                        <td>{strike_rate}</td>
+
+                        {#meta}
+                            <td>{vsBowler}</td>
+                        {/meta}
+
+                        {?isFeedback}
+                            {#meta}
+                                <td>{lastN}</td>
+                            {/meta}
+                        {/isFeedback}
+                    </tr>
+                {/batting}
+            </tbody>
+        </table>
+    </td>
+
+    <td>
+        <table class="batsmen-career" width="100%">
+            <thead>
+                <tr>
+                    <th class="th-mats">Mat</th>
+                    <th class="th-runs">Runs</th>
+                    <th class="th-hs">HS</th>
+                    {?isT20}
+                        <th class="th-sr">SR</th>
+                    {:else}
+                        <th class="th-sr">Ave</th>
+                    {/isT20}
+                </tr>
+            </thead>
+            <tbody>
+                {#batting}
+                    <tr class="row{num}">
+                        {?batting_averages}
+                            {#batting_averages}
+                                    <td>{matches}</td>
+                                    <td>{runs}</td>
+                                    <td>{high_score}</td>
+                                    {?isT20}
+                                        <td>{batting_strike_rate}</td>
+                                    {:else}
+                                        <td>{batting_average}</td>
+                                    {/isT20}
+                            {/batting_averages}
+                        {/batting_averages}
+                    </tr>
+                {/batting}
+            </tbody>
+        </table>
+    </td>
+</tr>
+<tr>
+    <td  colspan="2">
+        <table class="bowlers" width="100%">
+            <thead>
+                <tr>
+                    <th class="th-bowlers">Bowlers</th>
+                    <th class="th-o">O</th>
+                    <th class="th-m">M</th>
+                    <th class="th-r">R</th>
+                    <th class="th-w">W</th>
+                    <th class="th-econ">Econ</th>
+                    <th class="th-0s">0s</th>
+                    <th class="th-4s">4s</th>
+                    <th class="th-6s">6s</th>
+                    {?isFeedback}
+                        <th class="th-this-spell">This spell</th>
+                    {/isFeedback}
+                </tr>
+            </thead>
+            <tbody>
+                {# bowling}
+                    <tr class="row{num}">
+                        <td class="bowler-{num}-name {currentClass}">
+
+                            {?pageurl}
+                            <a href="{pageurl}" title="{pageTitle}" target="_blank">{name}</a> 
+                            {:else}
+                                {name} 
+                            {/pageurl}
+
+                            {?style}
+                                <span class="type-of-player">({style})</span>
+                            {/style}
+                        </td>
+                        <td>{overs}</td>
+                        <td>{maidens}</td>
+                        <td>{conceded}</td>
+                        <td>{wickets}</td>
+                        <td>{economy_rate}</td>
+
+                        {#meta}
+                            <td>{dots}</td>
+                            <td>{fours}</td>
+                            <td>{sixes}</td>
+                        {/meta}
+
+                        {?isFeedback}
+                            {#meta}
+                                <td>{spell}</td>
+                            {/meta}
+                        {/isFeedback}
+                    </tr>
+                {/bowling}
+            </tbody>
+        </table>
+    </td>
+    <td>
+        <table class="bowlers-career" width="100%">
+            <thead>
+                <tr>
+                    <th class="th-mat">Mat</th>
+                    <th class="th-wkts">Wkts</th>
+                    <th class="th-bbt">BBI</th>
+                    {?isLtdOvers}
+                        <th class="th-econ">Econ</th>
+                    {:else}
+                        <th class="th-econ">Ave</th>
+                    {/isLtdOvers}
+                </tr>
+            </thead>
+            <tbody>
+                {#bowling}
+                    <tr class="row{num}">
+                        {?bowling_averages}
+                            {#bowling_averages}
+                                    <td>{matches}</td>
+                                    <td>{wickets}</td>
+                                    <td>{bbi}</td>
+                                    {?isLtdOvers}
+                                        <td>{economy_rate}</td>
+                                    {:else}
+                                        <td>{bowling_average}</td>
+                                    {/isLtdOvers}
+                            {/bowling_averages}
+                        {/bowling_averages}
+                    </tr>
+                {/bowling}
+            </tbody>
+        </table>
+    </td>
+</tr>

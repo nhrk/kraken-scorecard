@@ -1,0 +1,122 @@
+{?recent}
+<div class="recent-overs">
+        <span class="head">Recent overs</span>
+        {#recent}
+            <ul class="inline-list recent-over {className}">
+                {#balls}
+                    <li>
+                    {?isDotBall}
+                        &bull;{?extras}<sup>{extras}</sup>{/extras}    
+                    {:else}
+                        {ball|s}{?extras}<sup>{extras}</sup>{/extras}
+                    {/isDotBall}
+                    </li>
+                {/balls}
+            </ul>
+        {/recent}
+        <div class="cb"></div>
+</div>
+<hr class="secondary-hr">
+{/recent}
+
+{?partnership}
+    {#partnership}
+    <div class="current-partnership">
+        <p>
+            <span class="head">
+                <!--<img src="http://i.imgci.com/espncricinfo/scorecard/icon-current-partnership.png" class="icon-partnership"/>-->
+                Current partnership
+            </span>
+            <span>
+                {?partnership_runs}
+                    {partnership_runs} runs, 
+                {/partnership_runs}
+                {?partnership_overs}
+                    {partnership_overs} overs, 
+                {/partnership_overs}
+                {?partnership_rate}
+                    RR: {partnership_rate} 
+                {/partnership_rate}
+                {?player}
+                    ({#player}{?name}{name} {partnership_runs}{separator}{/name}{/player})
+                {/player}
+            </span>
+        </p>
+        <hr class="secondary-hr">
+    </div>
+    {/partnership}
+{/partnership}
+
+{?dismissal}
+    {#dismissal}
+        <div class="last-bat-fow">
+            {#lastbat}
+                <p>
+                    <span class="head">Last bat</span> 
+                    <span>
+                        {?name}
+                            <a href="{url_link}" title="{url_title}" target="_blank">{name}</a> 
+                        {/name}
+                        {?dismissal_string}
+                            {dismissal_string|s} 
+                        {/dismissal_string}
+                        {?score}
+                            {score} 
+                        {/score}
+                        {?strike_rate}
+                            SR: {strike_rate}
+                        {/strike_rate}
+                    </span>
+                </p>
+            {/lastbat}
+            {#summary}
+                <p>
+                    <span class="head">Fall of wicket</span> 
+                    <span>
+                        {?score}
+                            {score}; 
+                        {/score}
+                        {#partnership}
+                            Partnership: 
+                            {?partnership_runs}
+                                {partnership_runs} runs, 
+                            {/partnership_runs}
+                            {?partnership_overs}
+                                {partnership_overs} overs, 
+                            {/partnership_overs}
+                            {?partnership_rate}
+                                RR: {partnership_rate} 
+                            {/partnership_rate}
+                            {?player}
+									({#player}{?name}{name} {partnership_runs}{separator}{/name}{/player})
+                            {/player}
+                        {/partnership}
+                    </span>
+                </p>
+            {/summary}
+        </div>
+    {/dismissal}
+{/dismissal}
+
+{?review}
+    {#review}
+        <hr class="secondary-hr">
+        <div class="umpire-review">
+            <p>
+                <span class="head">Umpire reviews remaining</span>
+                {#teams}
+                    <span>
+                        {?name}
+                            {name}
+                        {/name}
+                        {?remaining}
+                            {remaining}
+                        {/remaining}
+                        ({successful} successful, {unsuccessful} unsuccessful){separator}
+                    </span>
+                {/teams}
+            </p>
+        </div>
+    {/review}
+{/review}
+<hr class="thick-2">

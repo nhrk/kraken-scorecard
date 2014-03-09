@@ -1,0 +1,77 @@
+
+<div class="large-13 medium-13 columns innings-information">
+    {#teams}
+        {#team1}
+        <div class="team-1-name">
+            {name} 
+            {#innings}
+                <span class="innings-1-score {className}">{score}</span>{separator}
+            {/innings}
+        </div>
+        {/team1}
+
+        {#team2}
+        <div class="team-2-name">
+            {name} 
+            {#innings}
+                <span class="innings-1-score {className}">{score}</span>{separator}
+            {/innings}
+        </div>
+        {/team2}
+    {/teams}
+
+    <div class="innings-requirement">
+        {status}
+    </div>
+</div>
+
+<div class="large-7 medium-7 columns text-right match-information">
+    {#runrates}
+        {#liveInnings}
+            {?rr}
+            <div class="bold"><span>{name}</span> RR <span class="normal">{rr}</span></div>
+            {/rr}
+
+            {#pp}
+                {?run_rate}
+                <div class="bold">
+                    {field_restrict_name}
+                    <span class="normal">{runs}/{wickets} ({overs})</span> RR <span class="normal">{run_rate}</span>
+                </div>
+                {/run_rate}
+            {/pp}
+
+            {#lastN}
+                {?run_rate}
+                <div class="bold">
+                    Last {over_span} ovs 
+                    <span class="normal">{runs}/{wickets}</span> RR <span class="normal">{run_rate}</span> 
+                </div>
+                {/run_rate}
+            {/lastN}
+
+            {?rrr}
+            <div class="bold">Required RR <span class="normal">{rrr}</span></div> 
+            {/rrr}
+        {/liveInnings}
+
+        {#previousInnings}
+            {?rr}
+            <div class="bold">
+                <span>{name}</span> RR 
+                <span class="normal">
+                    {?orr}
+                        ({rr}) {orr}
+                    {:else}
+                        {rr}
+                    {/orr}
+                </span>
+            </div>
+            {/rr}
+        {/previousInnings}
+    {/runrates}
+
+    {?minRemainOvers}
+    <div class="bold">Min overs remaining <span class="normal">{minRemainOvers}</span></div>
+    {/minRemainOvers}
+</div>

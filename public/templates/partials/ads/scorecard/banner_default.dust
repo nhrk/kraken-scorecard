@@ -1,0 +1,11 @@
+{?ENABLE_LIVE_JSON}
+{:else}
+<div class="topFrameBanner">
+	{/ENABLE_LIVE_JSON}
+	<script language="JavaScript" type="text/javascript">
+	document.write('<script language="JavaScript" src="http://ad.doubleclick.net/N6444/adj/espn.cricinfo.livescorecard/{ads.url_component};kvcluster={cluster};kvpt={ads.kvpt};kvserobject={ads.kvserobject};kvsite={ads.url_component};kvbrand={ads.url_component};tile=1;sz=728x90,970x250,970x66,1x1;dcopt=ist;adtar={ads.adtar};ord=' + ord + '?" type="text/javascript"><\/script>');
+	</script><noscript><a href="http://ad.doubleclick.net/N6444/jump/espn.cricinfo.livescorecard/{ads.url_component};kvcluster={cluster};kvpt={ads.kvpt};kvserobject={ads.kvserobject};kvsite={ads.url_component};kvbrand={ads.url_component};tile=1;sz=728x90,970x250,970x66,1x1;adtar={ads.adtar};dcopt=ist;ord=123456789?" target="_blank"><img src="http://ad.doubleclick.net/N6444/ad/espn.cricinfo.livescorecard/{ads.url_component};kvcluster={cluster};kvpt={ads.kvpt};kvserobject={ads.kvserobject};kvsite={ads.url_component};kvbrand={ads.url_component};tile=1;sz=728x90,970x250,970x66,1x1;adtar={ads.adtar};dcopt=ist;ord=123456789?" border="0" alt=""></a></noscript>
+	{?ENABLE_LIVE_JSON}
+	{:else}
+</div>
+{/ENABLE_LIVE_JSON}

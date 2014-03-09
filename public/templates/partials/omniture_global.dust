@@ -1,0 +1,128 @@
+<script type="text/javascript" language="JavaScript">
+{?HQserver}
+	var s_account = "wdgesptest";
+{:else}
+	var s_account="wdgespcricinfo";	//(Excludes Wireless)
+{/HQserver}
+	//alert(window.location.hostname);
+	//alert(s_account);
+</script>
+
+<script language="JavaScript" type="text/javascript" src="http://www.espncricinfo.com/navigation/cricinfo/omniture/omniture_global.js?{mtimes.omniture_global__js}"></script>
+
+<script type="text/javascript" language="JavaScript">
+<!--
+
+//Clearing variable values for link tracking call
+function clrLnkTrckVar(){	
+	//Clear variables
+	s_omni.pageName = "";
+	s_omni.server = "";
+	s_omni.prop1 = "";
+	s_omni.prop3 = "";
+	s_omni.eVar2 = "";
+}
+
+//Link tracking like Video Tab, Video headlines, audio downloads etc.
+function lnkTrackVals(name){
+
+	//alert("Video Tab");
+	clrLnkTrckVar(); //Clear variables
+	
+	var lnkTrck = name;
+	s_omni.prop3 = s_omni.eVar2 = lnkTrck;
+	s_omni.t();
+	//alert(lnkTrck);
+	
+}
+
+/* You may give each page an identifying name, server, and channel on the next lines. */
+s_omni.server = window.location.host; // Server from the Host
+s_omni.prop1 = "cricinfo";
+
+//s_omni.pageName = omniPageName.toLowerCase(); //Omniture Page Name(S)
+
+if(typeof omniSiteSection2 != 'undefined' && typeof omniSiteSubSection3 != 'undefined'){
+	s_omni.pageName = omniSiteSection1.toLowerCase() + ":" + omniSiteSection2.toLowerCase() + ":" + omniSiteSection3.toLowerCase() + ":" + omniPageName.toLowerCase(); 	//Page name
+}else if(typeof omniSiteSection2 != 'undefined'){
+	s_omni.pageName = omniSiteSection1.toLowerCase() + ":" + omniSiteSection2.toLowerCase() + ":" + omniPageName.toLowerCase(); 												//Page name
+}else{
+	s_omni.pageName = omniSiteSection1.toLowerCase() + ":" + omniPageName.toLowerCase(); 																									//Page name
+}
+
+var omniPath = location.pathname;
+//alert(omniPath);
+if(typeof omniSiteSection1 != 'undefined'){
+	s_omni.channel = omniSiteSection1.toLowerCase();
+}
+
+//Error page variables
+if(typeof omniPageType == 'undefined'){
+	s_omni.pageType = "";
+}
+else{
+	s_omni.pageType = "errorPage";
+	s_omni.pageName = "";
+	s_omni.server = "";
+	s_omni.prop1 = "";	
+}
+
+if(typeof omniCt != 'undefined'){
+	s_omni.prop4 = omniCt.toLowerCase();	//Content type
+}
+
+if(typeof omniSiteSection2 != 'undefined' && typeof omniSiteSubSection3 != 'undefined'){
+	s_omni.prop5 = s_omni.channel + ":" +  omniSiteSection2.toLowerCase() + ":"+  omniSiteSubSection3.toLowerCase();
+}else if(typeof omniSiteSection2 != 'undefined'){
+	s_omni.prop5 = s_omni.channel + ":" +  omniSiteSection2.toLowerCase();
+}
+
+if(typeof omniStoryId != 'undefined'){
+	s_omni.prop15 = s_omni.eVar20 = omniStoryId; //Story Object id		
+}
+s_omni.prop16 = s_omni.eVar12 = cqanswer //Country where the page is viewed
+s_omni.prop17 = s_omni.eVar9 = "en" // Language Code
+
+if(typeof omniAuthId != 'undefined'){
+	s_omni.prop23 = s_omni.eVar10 = omniAuthId; //Columnist id		
+}
+
+s_omni.prop25 = s_omni.eVar19 = "cricket"; // Sport
+
+//Prop29 for capturing the Registered users
+var user_name = getCookie('un');
+if (user_name != "");
+{
+	if (user_name == null || undefined)
+	{
+		s_omni.prop29 = "anonymous";
+}
+	else
+	{
+	s_omni.prop29 = "Registered:Logged in Active";
+	}
+}
+
+//Prop32 for capturing Player and Grounds ID for the Most viewed objects
+if(typeof omniMVO != 'undefined'){
+	s_omni.prop32 = omniMVO; //Most viewed objects for Plyers and Grounds		
+}
+
+//Prop42 for capturing Hawkeye tabs
+if(typeof omniHawk != 'undefined'){
+	s_omni.prop33 = omniHawk; //capturing Hawkeye tabs	
+}
+
+s_omni.hier1 = s_omni.pageName;																	//Content Hierarchy
+if(typeof omniSrhType != 'undefined'){
+	s_omni.eVar11 = omniSrhType;
+}
+s_omni.eVar13 = s_omni.prop1 + ":" + s_omni.pageName; 						//Page name
+
+//s_omni.prop42 = omniHawk;
+
+/************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/
+var s_code=s_omni.t();if(s_code)document.write(s_code)//-->
+
+</script>
+<!-- End SiteCatalyst code version: H.14. -->

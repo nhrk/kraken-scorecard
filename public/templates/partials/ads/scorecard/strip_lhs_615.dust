@@ -1,0 +1,16 @@
+{?lhs_615}
+<div class="underhead-ad-615-1">
+	
+	{@eq key="{cluster}" value="ind"}
+	<a href="http://pubads.g.doubleclick.net/gampad/clk?id=65752137&iu=/6444/espn.cricinfo.nondartserved/clicktracker" target="_blank"><img src="http://i.imgci.com/scorecard/india/Samsung_615x40.jpg" alt="Samsung" title="Samsung" /></a>
+	{/eq}
+	{@eq key="{cluster}" value="sl"}
+	<a href="http://pubads.g.doubleclick.net/gampad/clk?id=67479897&amp;iu=/6444/espn.cricinfo.nondartserved/clicktracker" target="_blank"><img src="http://i.imgci.com/scorecard/sl/Clear_615x40.jpg" alt="Clear" title="Clear" /></a>
+	{/eq}
+	{@eq key="{cluster}" value="aus"}
+	<script language="JavaScript" type="text/javascript">
+	document.write('<script language="JavaScript" src="http://ad.doubleclick.net/N6444/adj/espn.cricinfo.livescorecard/{ads.url_component};kvcluster={cluster};kvpt=score;kvserobject={ads.kvserobject};kvsite={ads.url_component};kvbrand={ads.url_component};tile=2;sz=615x40;kvpos={ads.strip_lhs_615.kvpos};adtar={ads.adtar};ord=' + ord + '?" type="text/javascript"><\/script>');
+	</script><noscript><a href="http://ad.doubleclick.net/N6444/jump/espn.cricinfo.livescorecard/{ads.url_component};kvcluster={cluster};kvpt=score;kvserobject={ads.kvserobject};kvsite={ads.url_component};kvbrand={ads.url_component};tile=2;sz=615x40;kvpos={ads.strip_lhs_615.kvpos};adtar={ads.adtar};ord=123456789?" target="_blank"><img src="http://ad.doubleclick.net/N6444/ad/espn.cricinfo.livescorecard/{ads.url_component};kvcluster={cluster};kvpt=score;kvserobject={ads.kvserobject};kvsite={ads.url_component};kvbrand={ads.url_component};tile=2;sz=615x40;kvpos={ads.strip_lhs_615.kvpos};adtar={ads.adtar};ord=123456789?" width="615" height="40" border="0" alt=""></a></noscript>
+	{/eq}
+</div>
+{/lhs_615}

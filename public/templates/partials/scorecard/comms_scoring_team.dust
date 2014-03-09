@@ -1,0 +1,8 @@
+{?match.live_commentator}
+<h6>Commentator</h6>
+<span>{match.live_commentator}</span>
+{/match.live_commentator}
+{?match.live_scorer}
+<h6>Scorer</h6>
+<span>{match.live_scorer}</span>
+{/match.live_scorer}

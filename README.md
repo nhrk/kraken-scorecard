@@ -1,2 +1,3 @@
-kraken-scorecard
-================
+# kraken-scorecard
+
+"ESPNcricinfo scorecard with Kraken.js"

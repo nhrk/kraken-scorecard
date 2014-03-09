@@ -1,0 +1,138 @@
+
+{?comms}
+    {#comms}
+        {#eoo}
+            {?over_complete}
+                <div class="end-of-over-info">
+                    <p>
+                        <span class="bold">End of over {over_number}</span>
+                        {?event_string}
+                            ({event_string})
+                        {/event_string}
+
+                        {?team_name}
+                            <span class="bold">
+                                {team_name}
+
+                                {?runs}
+                                    {runs}/{wickets}
+                                {/runs}
+                            </span>
+                        {/team_name}
+
+                        {?required_string}
+                            ({required_string})
+                        {/required_string}
+                    </p>
+
+                    <ul class="large-block-grid-2 end-of-over-player-stat clearfix">
+                        <li class="eov-stat-batsmen">
+                            {?batsmen}
+                                <ul class="end-of-over-batsmen">
+                                    {#batsmen}
+                                        <li class="clearfix">
+                                            <span class="large-10 medium-10 columns">
+                                                {long_name}
+                                            </span>
+                                            {?formatted_runs}
+                                                <span class="large-10 medium-10 columns">
+                                                    {formatted_runs}
+                                                </span>
+                                            {/formatted_runs}
+                                        </li>
+                                    {/batsmen}
+                                </ul>
+                            {/batsmen}
+                        </li>
+                        <li class="eov-stat-bowlers">
+                            {?bowlers}
+                                <ul class="end-of-over-bowlers">
+                                    {#bowlers}
+                                    <li class="clearfix">
+                                        <span class="large-11 medium-11 columns">
+                                            {long_name}
+                                        </span>
+
+                                        {?spell}
+                                            <span class="large-9 medium-9 columns">
+                                                {spell}
+                                            </span>
+                                        {/spell}
+                                    </li>
+                                    {/bowlers}
+                                </ul>
+                            {/bowlers}
+                        </li>
+                    </ul>
+
+                </div>
+            {/over_complete}
+        {/eoo}
+
+        {#eot}
+            {?over_number}
+                <div class="end-of-over-info">
+                    <p>
+                        {?team_name}
+                            <span class="bold">
+                                One-over eliminator - {team_name} -
+                                {?runs}
+                                    {runs}/{wickets}
+                                    {?wicket_string}
+                                        - {wicket_string}
+                                    {/wicket_string}
+                                {/runs}
+                                {?overs}
+                                    ({overs} {over_string})
+                                {/overs}
+                            </span>
+                        {/team_name}
+                    </p>
+                </div>
+            {/over_number}
+        {/eot}
+
+        {#balls}
+                {?post_text}
+                    <div class="commentary-event">
+                        <p>{post_text|s}</p>
+                    </div>
+                {/post_text}
+
+                {?overs_actual}
+                    <div class="commentary-event">
+                        <div class="commentary-overs">{overs_actual}</div>
+                        <div class="commentary-text">
+                            <p>
+                                {?players}
+                                    {players}{eventSep}
+                                {/players}
+                                {?event}
+                                    <span class="{eventClassName}">{event}</span>{commsSep}
+                                {/event}
+                                {?text}
+                                    {text|s}
+                                {/text}
+                            </p>
+
+                            {?dismissal}
+                                <p class="bold">
+                                    {dismissal|s}
+                                </p>
+                            {/dismissal}
+
+                        </div>
+                    </div>
+                {/overs_actual}
+
+                {?pre_text}
+                    <div class="commentary-event">
+                        <p>{pre_text|s}</p>
+                    </div>
+                {/pre_text}
+
+        {/balls}
+    {/comms}
+
+{/comms}
+
