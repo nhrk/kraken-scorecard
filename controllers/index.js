@@ -7,7 +7,6 @@ var request = require('request'),
 	pass = new Buffer('Q0lpcGwyMDEw=', 'base64').toString('ascii'),
 	geo = require('../lib/geo.js'),
 	cache = {},
-	extend = require('extend'),
 	cacheDuration = 10000;
 
 module.exports = function(app) {
@@ -62,11 +61,9 @@ module.exports = function(app) {
 		}
 
 		url = protcol + (auth ? uname + ':' + pass + '@' : '') +  host + path + '/' + id + '.json'
-		+ '?base=' + (req.param('base') || 1) 
-		+ ';cluster=' + (req.param('cluster') || cluster)
-		+ ';country=' + (req.param('country') || country);
-		
-		console.log(url,geoData);
+			+ '?base=' + (req.param('base') || 1) 
+			+ ';cluster=' + (req.param('cluster') || cluster)
+			+ ';country=' + (req.param('country') || country);
 
 		if(cacheEnabled){
 			cache[url] = cache[url] || {};
@@ -141,9 +138,11 @@ module.exports = function(app) {
 					cache[url].time = new Date();
 				}
 
+				console.log('Rendered');
 				res.render('live2', json);
 
 			} else {
+				console.log('else error');
 				res.render('errors/500');
 			}
 		});
