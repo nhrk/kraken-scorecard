@@ -22,7 +22,7 @@
 	<!-- end -->
 	<!-- Scorecard -->
 	<div class="row">
-		<div class="large 20 columns scorecard">
+		<div class="large 20 columns scorecard" style="position:relative;">
 			<hr class="border-top-score-squad">
 			<table class="squad-table" width="100%">
 			</table>
@@ -30,6 +30,13 @@
 			</table>
 			<div class="more-match-stats">
 			</div>
+			{?showBet365}
+			<style type="text/css">
+				.last-bat-fow{width: 80%;}
+				table.squad-table table.team-2{width: 80% !important;}
+			</style>
+			<div style="float:right;position:[% ad_pos; %];bottom:7px;right:10px"><a target='_blank' href='http://pubads.g.doubleclick.net/gampad/clk?id=76519497&iu=/6444/espn.cricinfo.nondartserved/clicktracker'><img src='http://i.imgci.com/espncricinfo/scorecard/Bet-365.jpg' /></a></div>
+			{/showBet365}
 		</div>
 	</div>
 	<!--  End -->
@@ -38,22 +45,22 @@
 	<!-- Commentary & Central Thin Colum -->
 	<div class="row">
 		<!-- Commentary -->
-		<div class="large-16 medium-16 columns commentary-block">
+		<div class="large-20 medium-20 columns commentary-block">
 		</div>
-		<div class="large-4 medium-4 columns thin-incontent-block">
-			{>"partials/scorecard/social"/}
+		<div class="large-4 medium-4 columns thin-incontent-block hide">
+			[% PROCESS engine/match/live/common/center_column.inc; %]
 		</div>
 	</div>
 	<div class="row">
 		<!-- filters, comm feedback and social icons start-->
-		<div class="large-16 medium-16 columns filters-block">
+		<div class="large-20 medium-20 columns filters-block">
 			<hr>
 			<div class="row">
 				<div class="large-12 medium-12 columns">
 					<ul class="inline-list commentary-main-events-links">
-						<li><a href="/{match.url_component}/engine/match/{matchId}.html?innings={match.live_innings_number};type=fours;view=commentary;wrappertype=none{?cluster};cluster={cluster}{/cluster}">Fours</a></li>
-						<li><a href="/{match.url_component}/engine/match/{matchId}.html?innings={match.live_innings_number};type=sixes;view=commentary;wrappertype=none{?cluster};cluster={cluster}{/cluster}">Sixes</a></li>
-						<li class="remove-border-right"><a href="/{match.url_component}/engine/match/{matchId}.html?innings={match.live_innings_number};type=wickets;view=commentary;wrappertype=none{?cluster};cluster={cluster}{/cluster}">Wickets</a></li>
+						<li><a href="http://www.espncricinfo.com/{match.url_component}/engine/match/{matchId}.html?innings={match.live_innings_number};type=fours;view=commentary;wrappertype=none{?cluster};cluster={cluster}{/cluster}">Fours</a></li>
+						<li><a href="http://www.espncricinfo.com/{match.url_component}/engine/match/{matchId}.html?innings={match.live_innings_number};type=sixes;view=commentary;wrappertype=none{?cluster};cluster={cluster}{/cluster}">Sixes</a></li>
+						<li class="remove-border-right"><a href="http://www.espncricinfo.com/{match.url_component}/engine/match/{matchId}.html?innings={match.live_innings_number};type=wickets;view=commentary;wrappertype=none{?cluster};cluster={cluster}{/cluster}">Wickets</a></li>
 					</ul>
 				</div>
 				<div class="large-8 medium-8 columns">

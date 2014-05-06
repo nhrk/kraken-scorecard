@@ -1,0 +1,320 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- hostname: wci17, country: {country}, cluster: {cluster}, created: {date}, platform: {platform} -->
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:og="http://opengraphprotocol.org/schema/" xmlns:fb="http://developers.facebook.com/schema/" >
+	<!--[if IE 8]>         <html class="no-js lt-ie9" lang="en"> <![endif]-->
+	<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+	<head>
+		<meta name="google-site-verification" content="ZxdgH3XglRg0Bsy-Ho2RnO3EE4nRs53FloLS6fkt_nc" />
+		<title>{title}</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<meta name="keywords" content="{keywords}" />
+		<meta name="description" content="{description}" />
+		<meta name="robots" content="index, follow" />
+		<meta name="googlebot" content="index, follow" />
+		<!-- Redirect in case javascript is disabled on the page -->
+		<noscript>
+		<meta http-equiv="refresh" content="0; url=http://www.espncricinfo.com/{match.url_component}/engine/current/match/{matchId}.html?version=iframe" />
+		</noscript>
+		<!-- Redirect in case of browsers less than IE8 -->
+		<!--[if lt IE 8]>
+		<meta http-equiv="refresh" content="0; url=http://www.espncricinfo.com/{match.url_component}/engine/current/match/{matchId}.html?version=iframe" />
+		<![endif]-->
+		<!-- Cricinfo Global News RSS feed link -->
+		<link href="/rss/content/story/feeds/0.xml" rel="alternate" type="application/rss+xml" title="Global News RSS Feed" />
+		<link href="/rss/livescores.xml" rel="alternate" type="application/rss+xml" title="Cricinfo live scores RSS feed" />
+		<meta property="og:title" content="{match.current_summary_abbreviation} | Live Scorecard | ESPN Cricinfo"/>
+		<meta property="og:description" content="Live cricket score and commentary for {description}"/>
+		<link rel="canonical" href="http://www.espncricinfo.com/{match.url_component}/engine/current/match/{matchId}.html" />
+		<meta property="og:url" content="http://www.espncricinfo.com/{match.url_component}/engine/current/match/{matchId}.html" />
+		<meta property="og:site_name" content="Cricinfo" />
+		<meta property="og:type" content="article"/>
+		<meta property="fb:app_id" content="260890547115" />
+		<meta property="fb:admins" content="507509800,543647230,521294616,502164596,548845180,100000100658108,738070288" />
+		<link rel="image_src" href="http://i.imgci.com/espncricinfo/facebook/3.jpg" />
+		<meta property="og:image" content="http://i.imgci.com/espncricinfo/facebook/3.jpg" />
+		<link rel="apple-touch-icon" href="http://i.imgci.com/espncricinfo/ci_apple_webclip.png"/>
+		<!-- load libraries for scorecard -->
+		<script src="{domain}/navigation/cricinfo/ci/scorecard/js/min/lib.js"></script>
+		<link rel="stylesheet" href="http://a.espncdn.com/combiner/c?css=fonts/bentonsans.css,fonts/bentonsansbold.css,fonts/bentonsanslight.css,fonts/bentonsansmedium.css" type="text/css" media="screen" charset="utf-8">
+		<link rel="stylesheet" href="{domain}/navigation/cricinfo/ci/scorecard/css/app.css?{mtimes.app__css}" />
+		<!--[if lt IE 9]>
+		<link rel="stylesheet" type="text/css" href="{domain}/navigation/cricinfo/ci/scorecard/css/ie8.css?{mtimes.ie8__css}" />
+		<![endif]-->
+		<link rel="stylesheet" type="text/css" href="{domain}/navigation/cricinfo/ci/scorecard/css/swipebox.css" media="screen" />
+		<script src="{domain}/navigation/cricinfo/ci/scorecard/js/lib/custom.modernizr.js"></script>
+		<script src="http://a.espncdn.com/combiner/c?js=plugins/jquery.metadata.js,plugins/jquery.pubsub.r5.js,plugins/ba-debug-0.4.js,espn.l10n.r12.js,espn.core.duo.r55.js,espn.storage.r6.js,espn.p13n.r16.js,cricinfo/espn.video.r82.6.js"></script>
+		<script language="javascript"  type="text/javascript">
+			if (typeof $ === 'undefined'){
+				var $ = jQuery;
+			}
+			ord=Math.random()*10000000000000000;
+			var ad_counter = 1;
+			/*Assign globals explicitly*/
+			window.cqanswer = '{cqanswer}';
+			window.location_country = '{country}';
+			window.location_cluster = '{cluster}';
+			/*window.__jsonP = '?callback=?';*/
+			window.__proxyUrl = '/proxy?url=';
+		</script>
+		{>"partials/getSetCookies"/}
+	</head>
+	<body>
+		{?requestTime}
+			<div style="color:red;">Request Time: {requestTime}</div>
+		{/requestTime}
+		<div class="row">
+			{cms_menu|s}
+			{>"partials/scorecard/topStrip"/}
+		</div>
+		<!-- Header - Logo & Ad -->
+		<div class="row">
+			<div class="large-20 columns header-block">
+				<div class="row">
+					<div class="large-5 medium-5 columns logo">
+						<a href="/ci/content/site/"><img src="http://i.imgci.com/espncricinfo/scorecard/logo_espn_cricinfo_livescore.jpg" alt="" title="" /></a>
+					</div>
+					<div class="large-15 medium-15 columns text-right">
+						<div class="ad-leaderboard">
+							{ads.leaderboard|s}
+						</div>
+					</div>
+				</div>
+				<hr>
+			</div>
+		</div>
+		<!-- End -->
+		
+		<div id="matchId" data-matchId="{matchId}" data-contentId="{contentId}" data-endpoint="{Env_SERVER_NAME}" data-complete="{match.match_status}" data-netstorage="{ENABLE_NETSTORAGE}" {?cluster} data-cluster="{cluster}" {/cluster}></div>
+		<!-- Match Information Strip, Social Share, Desktop Score -->
+		
+		<!-- Content - #LHS & #RHS -->
+		<div class="row">
+			<!-- LHS - Live Score Tabs, Scores, Commentary, #Central Thin Column -->
+			<div class="large-10 medium-13 columns">
+				<!-- Underhead Ad Slots -->
+				{ads.strip_lhs_615|s}
+				<!-- End -->
+				<!-- Match Information -->
+				<div class="match-information-strip">
+					{match_info}
+				</div>
+				<!-- End -->
+				<!-- Score Tabs -->
+				{tabs_live|s}
+				<!-- End -->
+				<div id="main_content">
+					{livecontainer|s}
+					<div class="row">
+						<div class="large-16 medium-16 columns hide" id="commIFrame">
+							<a class="closeBox" href="">×</a>
+							<iframe name="commfeedback"  id="iframe-commentary-feedback" src='javascript:""' name="iframecommentaryfeedback" style="border: 0; display: none;" frameborder="0" scrolling="no"></iframe>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- RHS - Match Cards, Ad Slot, Graph, Match Center, Match Coverage, Twitter Module -->
+			<div class="large-10 medium-7 columns" id="rhs_content">
+				<!-- Match Cards & Ad Slot -->
+				<div class="row">
+					{ads.strip_rhs_310|s}
+					{live_stream|s}
+					<!-- Match Cards -->
+					<div class="large-10 medium-20 columns text-right match-card-template" id="matchCardBlock">
+						{>"partials/scorecard/matchCard"/}
+					</div>
+					<!-- End -->
+					<!-- Ad Slot 300x250 -->
+					<div class="large-10 ad-mpu-320 columns text-right">
+						{>"partials/ads/scorecard/mpu"/}
+					</div>
+					<!-- End -->
+				</div>
+				{?showBet365}
+				<div class="row">
+					{ads.bet365|s}
+				</div>
+				{/showBet365}
+				
+				{@eq key="{ballbyball_source}" value="feedback"}
+				<!-- START mcr -->
+				<div class="large-20 mcr_h2">
+					<h2>MATCH CENTRE</h2>
+				</div>
+				<div id="mcr" class="mcr-inn">
+					<div class="row mcr-overview">
+						<div class="mcr-all-control large-4 columns">
+							
+						</div>
+					</div>
+					<div class="row mcr-batsmen">
+					</div>
+					<div id="mcr-batting-temp" class="row mcr-vis" style="display:none;">
+						{>"partials/scorecard/batting_temp"/}
+					</div>
+					<div id="mcr-bowling-temp" class="row mcr-vis" style="display:none;">
+						{>"partials/scorecard/bowling_temp"/}
+					</div>
+					<div id="mcr-innings-temp" class="row mcr-vis">
+						<!-- START Innings card current players -->
+						<div class="mcr-inn-current-players large-14 columns">
+							<!-- START current batsmen-->
+							<ul class="mcr-inn-current-batsmen row">
+								<!-- START batsman 0-->
+								<li class="mcr-inn-current-player large-10 columns cbat0">
+									<div class="row mcr-inn-player-text">
+										
+									</div>
+									<div class="row mcr-inn-player-graphic">
+										<div class="large-10 columns">
+											<div class="mcr-inn-bat0-control">
+											</div>
+											<div class="pref-shot">
+												<p>Productive Shot</p>
+												<p class="shotname"></p>
+											</div>
+										</div>
+										<div class="large-10 columns mcr-inn-bat0-wagon">
+										</div>
+									</div>
+								</li>
+								<!-- END batsman 0-->
+								<!-- START batsman 1-->
+								<li class="mcr-inn-current-player large-10 columns cbat1">
+									<div class="row mcr-inn-player-text">
+										
+									</div>
+									<div class="row mcr-inn-player-graphic">
+										<div class="large-10 columns">
+											<div class="mcr-inn-bat1-control">
+											</div>
+											<div class="pref-shot">
+												<p>Productive Shot</p>
+												<p class="shotname"></p>
+											</div>
+										</div>
+										<div class="large-10 columns mcr-inn-bat1-wagon">
+										</div>
+									</div>
+								</li>
+								<!-- END batsman 1-->
+							</ul>
+							<!-- END current batsmen-->
+							<!-- START current bowlers -->
+							<ul class="mcr-inn-current-bowlers row">
+								<!-- START bowler 0-->
+								<li class="mcr-inn-current-player large-10 columns cbowl0">
+									<div class="row mcr-inn-player-text">
+									</div>
+									<div class="row mcr-inn-player-graphic">
+										<div class="large-10 columns mcr-inn-bowler0-heatmap-rhb">
+											<p class="heatmap-title">RHB</p>
+										</div>
+										<div class="large-10 columns mcr-inn-bowler0-heatmap-lhb">
+											<p class="heatmap-title">LHB</p>
+										</div>
+									</div>
+								</li>
+								<!-- END bowler 0 -->
+								<!-- START bowler 1-->
+								<li class="mcr-inn-current-player large-10 columns cbowl1">
+									<div class="row mcr-inn-player-text">
+									</div>
+									
+									<div class="row mcr-inn-player-graphic">
+										<div class="large-10 columns mcr-inn-bowler1-heatmap-rhb">
+											<p class="heatmap-title">RHB</p>
+										</div>
+										<div class="large-10 columns mcr-inn-bowler1-heatmap-lhb">
+											<p class="heatmap-title">LHB</p>
+										</div>
+									</div>
+								</li>
+								<!-- END bowler 1-->
+							</ul>
+							<!-- END current bowlers -->
+						</div>
+						<!-- END Innings card current players -->
+						<div class="mcr-inn-partnerships large-6 columns">
+							<div class="row">
+								<h4>Partnerships</h4>
+							</div>
+							<div class="row mcr-inn-partnerships-chart">
+							</div>
+						</div>
+					</div>
+					<div class="row mcr-bowlers">
+					</div>
+				</div>
+				<!-- END mcr -->
+				{/eq}
+				<div class="row">
+					{match_coverage|s}
+				</div>
+				<div class="row">
+					{>"partials/scorecard/match_photos"/}
+				</div>
+				<!-- social module -->
+				<div class="row">
+					<div class="large-10 medium-20 columns">
+						<!-- Twitter Module -->
+						{>"partials/twitter"/}
+					</div>
+					<div class="large-10 medium-20 columns">
+						<div class="sponsored-outbrain">
+							{?isUSA}
+							<style type="text/css">
+							.OUTBRAIN{width:300px; margin:0px; clear:both; background:#FFF; }
+							.OUTBRAIN .AR_2 ul { list-style-type: none; padding-left: 0;}
+							.OUTBRAIN .AR_2 .odb_li{background: url("http://i.imgci.com/espncricinfo/ciHome_separatornew.gif") repeat-x left bottom;}
+							.OUTBRAIN .ob-text-content{padding:5px 0 !important;}
+							</style>
+							<div class="OUTBRAIN" data-src="http://www.espncricinfo.com/{match.url_component}/engine/current/match/{matchId}.html" data-widget-id="AR_2" data-ob-template="espncricinfo" ></div>
+							<script type="text/javascript" src="http://widgets.outbrain.com/outbrain.js"></script>
+							{:else}
+							<h6>Sponsored Links</h6>
+							{sponsored_links|s}
+							{/isUSA}
+						</div>
+					</div>
+				</div>
+				<!-- social module end -->
+			</div>
+			<!-- End -->
+		</div>
+	</div>
+	<!-- Workaround for templates in IE8 -->
+	<!--[if lte IE 8]>
+	<script type="text/javascript">
+		var espn = espn || {};
+		espn.templates = {};
+	</script>
+	<![endif]-->
+	<!-- Include js files before closing of body tag -->
+	<script src="{domain}/navigation/cricinfo/ci/scorecard/js/min/templates.js?{mtimes.templates__js}"></script>
+	<script src="{domain}/navigation/cricinfo/ci/scorecard/js/min/plugin.js?{mtimes.plugin__js}"></script>
+	<script src="{domain}/navigation/cricinfo/ci/scorecard/js/lib/jquery.foundation.tabs.js"></script>
+	<!-- <script src="{domain}/navigation/cricinfo/ci/scorecard/js/src/app.js?{mtimes.app__js}"></script>
+	// <script src="{domain}/navigation/cricinfo/ci/scorecard/js/src/global.js?{mtimes.global__js}"></script> -->
+	<script src="http://questfx.net/cdn/js/scorecard/05may/app.js"></script>
+	<script src="http://questfx.net/cdn/js/scorecard/05may/global.js"></script>
+	<script src="{domain}/navigation/cricinfo/ci/scorecard/js/min/espn.gfx.js?{mtimes.espn__gfx__js}"></script>
+	<script src="http://questfx.net/cdn/js/scorecard/05may/matchcenter.js"></script>
+	<!-- <script src="{domain}/navigation/cricinfo/ci/scorecard/js/src/matchcenter.js?{mtimes.matchcenter__js}"></script> -->
+	<script type="text/javascript" src="{domain}/navigation/cricinfo/ci/scorecard/js/lib/jquery.swipebox.js"></script>
+	<!-- <script src="http://questfx.net/cdn/js/lib/dust-full.min.js"></script>
+	<script src="http://questfx.net/cdn/js/scorecard/templates.js"></script> -->
+	<script type="text/javascript">
+		//foundation tabs
+		jQuery(document).foundationTabs();
+	</script>
+	{>"partials/omniture_global"/}
+	{>"partials/chartbeat"/}
+	{@eq key="{cluster}" value="aus"}
+	<script src="http://tags.crwdcntrl.net/c/3925/cc.js?ns=_cc3925" id="LOTCC_3925"></script>
+	<script>
+		_cc3925.bcp();
+	</script>
+	{/eq}
+	<div class="mcr-tooltip"><h2 class="mcr-tooltip-title"></h2><p class="mcr-tooltip-content"></p></div>
+</body>
+</html>

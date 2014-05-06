@@ -1,0 +1,47 @@
+<div id="bowl_top_strip" class="row mcr-inn-player-text">
+    
+</div>
+<div class="large-20 columns mcr-bowl-filter">
+    <div class="large-8 columns">
+    </div>
+    <div class="large-12 columns">
+        <div class="large-20 columns mcr-filter-1">
+            <span id="mcr-bowl-bvfilter"><span>Filter By Batsman</span><img src="http://i.imgci.com/espncricinfo/scorecard/mcr_drop.png" /></span>
+            <ul id="mcr-bowl-drop" style="display:none;">				
+            </ul>
+        </div>
+        <!--<div class="large-3 columns mcr-over">
+            <span>Overs</span>
+        </div>
+        <div class="large-7 columns mcr-over-filter">
+            <span><input type="text" value="from" /></span><span>&nbsp;-&nbsp;</span><span> <input type="text" value="to" /></span>
+        </div>
+        <div class="large-3 columns mcr-filter-2">
+            <span id="over-filter">FILTER</span>
+        </div>-->
+    </div>
+</div>
+<div class="large-20 columns mcr-bowl-div">
+    <div class="large-10 columns" id="mcr-bowl-rhb">
+    	<div class="large-20 columns header"><span>RHB</span></div>
+        <div class="large-10 columns" id="mcr-bowl-heatmap-rhb">
+        </div>
+        <div class="large-10 columns" id="mcr-bowl-wagon-rhb">
+           
+        </div>
+        <div class="large-20 columns mcr-bowl-down">
+	        
+	    </div>
+    </div>
+    <div class="large-10 columns" id="mcr-bowl-lhb">
+    	<div class="large-20 columns header"><span>LHB</span></div>
+		<div class="large-10 columns" id="mcr-bowl-heatmap-lhb">
+        </div>
+        <div class="large-10 columns" id="mcr-bowl-wagon-lhb">
+           
+        </div>
+         <div class="large-20 columns mcr-bowl-down">
+	        
+	    </div>
+    </div>
+</div>

@@ -5,4 +5,5 @@
 {?match.live_scorer}
 <h6>Scorer</h6>
 <span>{match.live_scorer}</span>
+{test}
 {/match.live_scorer}

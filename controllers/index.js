@@ -1,11 +1,13 @@
-/*jshint maxcomplexity:18, maxstatements:30 */
+/*jshint maxcomplexity:24, maxstatements:35 */
 'use strict';
 
 var request = require('request'),
 	mime = require('node-mime'),
 	uname = new Buffer('bmloYXJr=', 'base64').toString('ascii'),
 	pass = new Buffer('Q0lpcGwyMDEw=', 'base64').toString('ascii'),
+	geo = require('../lib/geo.js'),
 	cache = {},
+	extend = require('extend'),
 	cacheDuration = 10000;
 
 module.exports = function(app) {
@@ -49,13 +51,22 @@ module.exports = function(app) {
 			auth = false,
 			path = '/ci/engine/match',
 			url,
+			ip = (req.headers['True-Client-IP'] || req.headers['x-forwarded-for'] || (req.connection.remoteAddress == '127.0.0.1' ? '116.72.156.25' /*'27.4.80.197' '199.88.194.29'*/ : req.connection.remoteAddress)),
+			geoData = geo.get(ip),
+			cluster = geoData.cluster,
+			country = geoData.country,
 			cacheEnabled = req.param('cache');
 
 		if(/localcms|dev|hq/.test(host)){
 			auth = true;
 		}
 
-		url = protcol + (auth ? uname + ':' + pass + '@' : '') +  host + path + '/' + id + '.json?base=' + (req.param('base') || 1);
+		url = protcol + (auth ? uname + ':' + pass + '@' : '') +  host + path + '/' + id + '.json'
+		+ '?base=' + (req.param('base') || 1) 
+		+ ';cluster=' + (req.param('cluster') || cluster)
+		+ ';country=' + (req.param('country') || country);
+		
+		console.log(url,geoData);
 
 		if(cacheEnabled){
 			cache[url] = cache[url] || {};
@@ -84,7 +95,7 @@ module.exports = function(app) {
 				json.domain = protcol + host;
 
 				/*TODO: update hardcoded value*/
-				json.cluster = req.param('cluster') || json.cluster || 'ind';
+				json.cluster = req.param('cluster') || cluster || 'ind';
 				json.isUSA = json.cluster === 'usa' ? true : false;
 				/*TODO: change ci to url component*/
 				json.uri = 'www.espncricinfo.com' + '/ci/engine/match/' + json.matchId + '.html';
@@ -117,6 +128,10 @@ module.exports = function(app) {
 					json.rhs_310 = true;
 				}
 
+				if(json.cluster === 'uk' || json.cluster === 'nz' || json.cluster === 'wi' || json.cluster === 'wwww'){
+					json.showBet365 = true;
+				}
+
 				if(req.param('time')){
 					json.requestTime = requestTime.time().time;
 				}
@@ -126,8 +141,8 @@ module.exports = function(app) {
 					cache[url].time = new Date();
 				}
 
+				res.render('live2', json);
 
-				res.render('scorecard', json);
 			} else {
 				res.render('errors/500');
 			}

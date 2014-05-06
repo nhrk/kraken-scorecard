@@ -1,0 +1,1163 @@
+
+### CONTINENT AF ###
+
+dz:
+ country  : Algeria
+ cricinfo : www
+ scrum    : af
+ espnf1   : fr
+ao:
+ country  : Angola
+ cricinfo : www
+ scrum    : af
+ac:
+ country  : Ascension Island
+ cricinfo : uk
+ scrum    : uk
+ espnf1   : en_UK
+bj:
+ country  : Benin
+ cricinfo : www
+ scrum    : af
+ espnf1   : fr
+bw:
+ country  : Botswana
+ cricinfo : rsa
+ scrum    : af
+ espnf1   : en
+bf:
+ country  : Burkina Faso
+ cricinfo : www
+ scrum    : af
+ espnf1   : fr
+bi:
+ country  : Burundi
+ cricinfo : www
+ scrum    : af
+ espnf1   : fr
+cm:
+ country  : Cameroon
+ cricinfo : www
+ scrum    : af
+ espnf1   : fr
+cv:
+ country  : Cape Verde
+ cricinfo : www
+ scrum    : af
+cf:
+ country  : Central African Republic
+ cricinfo : www
+ scrum    : af
+ espnf1   : fr
+td:
+ country  : Chad
+ cricinfo : www
+ scrum    : af
+ espnf1   : fr
+km:
+ country  : Comoros
+ cricinfo : www
+ scrum    : af
+ espnf1   : fr
+cg:
+ country  : Congo
+ cricinfo : www
+ scrum    : af
+ espnf1   : fr
+cd:
+ country  : Congo, The Democratic Republic of the
+ cricinfo : www
+ scrum    : af
+ espnf1   : fr
+ci:
+ country  : Cote d'Ivoire
+ cricinfo : www
+ scrum    : af
+ espnf1   : fr
+dj:
+ country  : Djibouti
+ cricinfo : www
+ scrum    : af
+ espnf1   : fr
+eg:
+ country  : Egypt
+ cricinfo : gulf
+ scrum    : af
+gq:
+ country  : Equatorial Guinea
+ cricinfo : www
+ scrum    : af
+ espnf1   : fr
+er:
+ country  : Eritrea
+ cricinfo : www
+ scrum    : af
+et:
+ country  : Ethiopia
+ cricinfo : www
+ scrum    : af
+ga:
+ country  : Gabon
+ cricinfo : www
+ scrum    : af
+ espnf1   : fr
+gm:
+ country  : Gambia
+ cricinfo : www
+ scrum    : af
+ espnf1   : en
+gh:
+ country  : Ghana
+ cricinfo : www
+ scrum    : af
+ espnf1   : en
+gn:
+ country  : Guinea
+ cricinfo : www
+ scrum    : af
+ espnf1   : fr
+gw:
+ country  : Guinea-Bissau
+ cricinfo : www
+ scrum    : af
+ke:
+ country  : Kenya
+ cricinfo : www
+ scrum    : af
+ espnf1   : en
+ls:
+ country  : Lesotho
+ cricinfo : rsa
+ scrum    : af
+ espnf1   : en
+lr:
+ country  : Liberia
+ cricinfo : www
+ scrum    : af
+ espnf1   : en
+ly:
+ country  : Libyan Arab Jamahiriya
+ cricinfo : www
+ scrum    : af
+mg:
+ country  : Madagascar
+ cricinfo : rsa
+ scrum    : af
+ espnf1   : fr
+mw:
+ country  : Malawi
+ cricinfo : rsa
+ scrum    : af
+ espnf1   : en
+ml:
+ country  : Mali
+ cricinfo : www
+ scrum    : af
+ espnf1   : fr
+mr:
+ country  : Mauritania
+ cricinfo : www
+ scrum    : af
+ espnf1   : fr
+mu:
+ country  : Mauritius
+ cricinfo : www
+ scrum    : af
+ espnf1   : en
+yt:
+ country  : Mayotte
+ cricinfo : www
+ scrum    : af
+ espnf1   : fr
+ma:
+ country  : Morocco
+ cricinfo : www
+ scrum    : af
+ espnf1   : fr
+mz:
+ country  : Mozambique
+ cricinfo : rsa
+ scrum    : af
+na:
+ country  : Namibia
+ cricinfo : rsa
+ scrum    : af
+ espnf1   : en
+ne:
+ country  : Niger
+ cricinfo : www
+ scrum    : af
+ espnf1   : fr
+ng:
+ country  : Nigeria
+ cricinfo : www
+ scrum    : af
+ espnf1   : en
+re:
+ country  : Reunion
+ cricinfo : www
+ scrum    : af
+ espnf1   : fr
+rw:
+ country  : Rwanda
+ cricinfo : www
+ scrum    : af
+ espnf1   : fr
+sh:
+ country  : Saint Helena
+ cricinfo : uk
+ scrum    : uk
+ espnf1   : en_UK
+st:
+ country  : Sao Tome and Principe
+ cricinfo : www
+ scrum    : af
+sn:
+ country  : Senegal
+ cricinfo : www
+ scrum    : af
+ espnf1   : fr
+sc:
+ country  : Seychelles
+ cricinfo : www
+ scrum    : af
+ espnf1   : en
+sl:
+ country  : Sierra Leone
+ cricinfo : www
+ scrum    : af
+ espnf1   : en
+so:
+ country  : Somalia
+ cricinfo : www
+ scrum    : af
+za:
+ country  : South Africa
+ cricinfo : rsa
+ scrum    : af
+ espnf1   : en
+sd:
+ country  : Sudan
+ cricinfo : www
+ scrum    : af
+ espnf1   : en
+sz:
+ country  : Swaziland
+ cricinfo : rsa
+ scrum    : af
+ espnf1   : en
+tz:
+ country  : Tanzania, United Republic of
+ cricinfo : www
+ scrum    : af
+ espnf1   : en
+tg:
+ country  : Togo
+ cricinfo : www
+ scrum    : af
+ espnf1   : fr
+tn:
+ country  : Tunisia
+ cricinfo : www
+ scrum    : af
+ espnf1   : fr
+ug:
+ country  : Uganda
+ cricinfo : www
+ scrum    : af
+ espnf1   : en
+eh:
+ country  : Western Sahara
+ cricinfo : www
+ scrum    : af
+zm:
+ country  : Zambia
+ cricinfo : rsa
+ scrum    : af
+ espnf1   : en
+zw:
+ country  : Zimbabwe
+ cricinfo : rsa
+ scrum    : af
+ espnf1   : en
+
+### CONTINENT AN ###
+
+aq:
+ country  : Antarctica
+ cricinfo : www
+ scrum    : oc
+bv:
+ country  : Bouvet Island
+ cricinfo : www
+ scrum    : eu
+tf:
+ country  : French Southern Territories
+ cricinfo : www
+ scrum    : eu
+ espnf1   : fr
+hm:
+ country  : Heard Island and McDonald Islands
+ cricinfo : aus
+ scrum    : oc
+ espnf1   : en_AU
+gs:
+ country  : South Georgia and the South Sandwich Islands
+ cricinfo : uk
+ scrum    : uk
+ espnf1   : en_UK
+
+### CONTINENT AS ###
+
+af:
+ country  : Afghanistan
+ cricinfo : pak
+ scrum    : as
+am:
+ country  : Armenia
+ cricinfo : www
+ scrum    : as
+az:
+ country  : Azerbaijan
+ cricinfo : www
+ scrum    : as
+bh:
+ country  : Bahrain
+ cricinfo : gulf
+ scrum    : as
+bd:
+ country  : Bangladesh
+ cricinfo : ind
+ scrum    : as
+bt:
+ country  : Bhutan
+ cricinfo : ind
+ scrum    : as
+io:
+ country  : British Indian Ocean Territory
+ cricinfo : uk
+ scrum    : uk
+ espnf1   : en_UK
+bn:
+ country  : Brunei Darussalam
+ cricinfo : eap
+ scrum    : as
+kh:
+ country  : Cambodia
+ cricinfo : eap
+ scrum    : as
+ espnf1   : fr
+cn:
+ country  : China
+ cricinfo : eap
+ scrum    : as
+cx:
+ country  : Christmas Island
+ cricinfo : aus
+ scrum    : as
+ espnf1   : en_AU
+cc:
+ country  : Cocos (Keeling) Islands
+ cricinfo : aus
+ scrum    : as
+cy:
+ country  : Cyprus
+ cricinfo : www
+ scrum    : as
+ge:
+ country  : Georgia
+ cricinfo : www
+ scrum    : as
+hk:
+ country  : Hong Kong
+ cricinfo : eap
+ scrum    : as
+ espnf1   : en
+in:
+ country  : India
+ cricinfo : ind
+ scrum    : as
+ espnf1   : en
+id:
+ country  : Indonesia
+ cricinfo : eap
+ scrum    : as
+ir:
+ country  : Iran, Islamic Republic of
+ cricinfo : gulf
+ scrum    : as
+iq:
+ country  : Iraq
+ cricinfo : gulf
+ scrum    : as
+il:
+ country  : Israel
+ cricinfo : www
+ scrum    : as
+jp:
+ country  : Japan
+ cricinfo : eap
+ scrum    : as
+ espnf1   : ja
+jo:
+ country  : Jordan
+ cricinfo : gulf
+ scrum    : as
+kz:
+ country  : Kazakhstan
+ cricinfo : www
+ scrum    : as
+kp:
+ country  : Korea, Democratic People's Republic of
+ cricinfo : eap
+ scrum    : as
+kr:
+ country  : Korea, Republic of
+ cricinfo : eap
+ scrum    : as
+kw:
+ country  : Kuwait
+ cricinfo : gulf
+ scrum    : as
+kg:
+ country  : Kyrgyzstan
+ cricinfo : www
+ scrum    : as
+la:
+ country  : Lao People's Democratic Republic
+ cricinfo : eap
+ scrum    : as
+ espnf1   : fr
+lb:
+ country  : Lebanon
+ cricinfo : gulf
+ scrum    : as
+ espnf1   : fr
+mo:
+ country  : Macao
+ cricinfo : eap
+ scrum    : as
+my:
+ country  : Malaysia
+ cricinfo : eap
+ scrum    : as
+mv:
+ country  : Maldives
+ cricinfo : sl
+ scrum    : as
+mn:
+ country  : Mongolia
+ cricinfo : www
+ scrum    : as
+mm:
+ country  : Myanmar
+ cricinfo : eap
+ scrum    : as
+np:
+ country  : Nepal
+ cricinfo : ind
+ scrum    : as
+om:
+ country  : Oman
+ cricinfo : gulf
+ scrum    : as
+pk:
+ country  : Pakistan
+ cricinfo : pak
+ scrum    : as
+ espnf1   : en
+ps:
+ country  : Palestinian Territory, Occupied
+ cricinfo : gulf
+ scrum    : as
+ph:
+ country  : Philippines
+ cricinfo : eap
+ scrum    : as
+ espnf1   : en
+tp:
+ country  : Portuguese Timor (being phased out)
+ cricinfo : eap
+ scrum    : as
+qa:
+ country  : Qatar
+ cricinfo : gulf
+ scrum    : as
+sa:
+ country  : Saudi Arabia
+ cricinfo : gulf
+ scrum    : as
+sg:
+ country  : Singapore
+ cricinfo : eap
+ scrum    : as
+ espnf1   : en
+lk:
+ country  : Sri Lanka
+ cricinfo : sl
+ scrum    : as
+sy:
+ country  : Syrian Arab Republic
+ cricinfo : gulf
+ scrum    : as
+tw:
+ country  : Taiwan
+ cricinfo : eap
+ scrum    : as
+tj:
+ country  : Tajikistan
+ cricinfo : www
+ scrum    : as
+th:
+ country  : Thailand
+ cricinfo : eap
+ scrum    : as
+tl:
+ country  : Timor-Leste
+ cricinfo : eap
+ scrum    : as
+tr:
+ country  : Turkey
+ cricinfo : www
+ scrum    : as
+tm:
+ country  : Turkmenistan
+ cricinfo : www
+ scrum    : as
+ae:
+ country  : United Arab Emirates
+ cricinfo : gulf
+ scrum    : as
+uz:
+ country  : Uzbekistan
+ cricinfo : www
+ scrum    : as
+vn:
+ country  : Viet Nam
+ cricinfo : eap
+ scrum    : as
+ espnf1   : fr
+ye:
+ country  : Yemen
+ cricinfo : gulf
+ scrum    : as
+
+### CONTINENT EU ###
+
+ax:
+ country  : Aland Islands
+ cricinfo : uk
+ scrum    : eu
+al:
+ country  : Albania
+ cricinfo : www
+ scrum    : eu
+ad:
+ country  : Andorra
+ cricinfo : uk
+ scrum    : eu
+ espnf1   : fr
+at:
+ country  : Austria
+ cricinfo : uk
+ scrum    : eu
+by:
+ country  : Belarus
+ cricinfo : www
+ scrum    : eu
+be:
+ country  : Belgium
+ cricinfo : uk
+ scrum    : eu
+ espnf1   : fr
+ba:
+ country  : Bosnia and Herzegovina
+ cricinfo : www
+ scrum    : eu
+bg:
+ country  : Bulgaria
+ cricinfo : www
+ scrum    : eu
+hr:
+ country  : Croatia
+ cricinfo : www
+ scrum    : eu
+cz:
+ country  : Czech Republic
+ cricinfo : www
+ scrum    : eu
+dk:
+ country  : Denmark
+ cricinfo : uk
+ scrum    : eu
+ee:
+ country  : Estonia
+ cricinfo : www
+ scrum    : eu
+eu:
+ country  : European Union
+ cricinfo : uk
+ scrum    : eu
+fo:
+ country  : Faroe Islands
+ cricinfo : uk
+ scrum    : eu
+fi:
+ country  : Finland
+ cricinfo : uk
+ scrum    : eu
+fr:
+ country  : France
+ cricinfo : uk
+ scrum    : eu
+ espnf1   : fr
+de:
+ country  : Germany
+ cricinfo : uk
+ scrum    : eu
+gi:
+ country  : Gibraltar
+ cricinfo : uk
+ scrum    : uk
+ espnf1   : en_UK
+gr:
+ country  : Greece
+ cricinfo : uk
+ scrum    : eu
+gg:
+ country  : Guernsey
+ cricinfo : uk
+ scrum    : uk
+ espnf1   : en_UK
+va:
+ country  : Holy See (Vatican City State)
+ cricinfo : uk
+ scrum    : eu
+hu:
+ country  : Hungary
+ cricinfo : www
+ scrum    : eu
+is:
+ country  : Iceland
+ cricinfo : www
+ scrum    : eu
+ie:
+ country  : Ireland
+ cricinfo : uk
+ scrum    : uk
+ espnf1   : en_UK
+im:
+ country  : Isle of Man
+ cricinfo : uk
+ scrum    : uk
+ espnf1   : en_UK
+it:
+ country  : Italy
+ cricinfo : uk
+ scrum    : eu
+je:
+ country  : Jersey
+ cricinfo : uk
+ scrum    : uk
+ espnf1   : en_UK
+lv:
+ country  : Latvia
+ cricinfo : www
+ scrum    : eu
+li:
+ country  : Liechtenstein
+ cricinfo : uk
+ scrum    : eu
+lt:
+ country  : Lithuania
+ cricinfo : www
+ scrum    : eu
+lu:
+ country  : Luxembourg
+ cricinfo : uk
+ scrum    : eu
+ espnf1   : fr
+mk:
+ country  : Macedonia, The Former Yugoslav Republic of
+ cricinfo : www
+ scrum    : eu
+mt:
+ country  : Malta
+ cricinfo : uk
+ scrum    : eu
+ espnf1   : en
+md:
+ country  : Moldova
+ cricinfo : www
+ scrum    : eu
+mc:
+ country  : Monaco
+ cricinfo : uk
+ scrum    : eu
+ espnf1   : fr
+me:
+ country  : Montenegro
+ cricinfo : www
+ scrum    : eu
+nl:
+ country  : Netherlands
+ cricinfo : uk
+ scrum    : eu
+no:
+ country  : Norway
+ cricinfo : uk
+ scrum    : eu
+pl:
+ country  : Poland
+ cricinfo : www
+ scrum    : eu
+pt:
+ country  : Portugal
+ cricinfo : uk
+ scrum    : eu
+ro:
+ country  : Romania
+ cricinfo : www
+ scrum    : eu
+ru:
+ country  : Russian Federation
+ cricinfo : www
+ scrum    : eu
+sm:
+ country  : San Marino
+ cricinfo : uk
+ scrum    : eu
+rs:
+ country  : Serbia
+ cricinfo : www
+ scrum    : eu
+sk:
+ country  : Slovakia
+ cricinfo : www
+ scrum    : eu
+si:
+ country  : Slovenia
+ cricinfo : www
+ scrum    : eu
+su:
+ country  : Soviet Union (being phased out)
+ cricinfo : www
+ scrum    : eu
+es:
+ country  : Spain
+ cricinfo : uk
+ scrum    : eu
+sj:
+ country  : Svalbard and Jan Mayen
+ cricinfo : www
+ scrum    : eu
+se:
+ country  : Sweden
+ cricinfo : uk
+ scrum    : eu
+ch:
+ country  : Switzerland
+ cricinfo : uk
+ scrum    : eu
+ espnf1   : fr
+ua:
+ country  : Ukraine
+ cricinfo : www
+ scrum    : eu
+gb:
+ country  : United Kingdom
+ cricinfo : uk
+ scrum    : uk
+ espnf1   : en_UK
+uk:
+ country  : United Kingdom
+ cricinfo : uk
+ scrum    : uk
+ espnf1   : en_UK
+yu:
+ country  : Yugoslavia (being phased out)
+ cricinfo : www
+ scrum    : eu
+
+### CONTINENT NA ###
+
+ai:
+ country  : Anguilla
+ cricinfo : wi
+ scrum    : na
+ espnf1   : en
+ag:
+ country  : Antigua and Barbuda
+ cricinfo : wi
+ scrum    : na
+ espnf1   : en
+aw:
+ country  : Aruba
+ cricinfo : www
+ scrum    : na
+bs:
+ country  : Bahamas
+ cricinfo : wi
+ scrum    : na
+ espnf1   : en
+bb:
+ country  : Barbados
+ cricinfo : wi
+ scrum    : na
+ espnf1   : en
+bz:
+ country  : Belize
+ cricinfo : www
+ scrum    : na
+ espnf1   : en
+bm:
+ country  : Bermuda
+ cricinfo : wi
+ scrum    : na
+ espnf1   : en
+ca:
+ country  : Canada
+ cricinfo : www
+ scrum    : na
+ espnf1   : en_US
+ky:
+ country  : Cayman Islands
+ cricinfo : wi
+ scrum    : na
+ espnf1   : en
+cr:
+ country  : Costa Rica
+ cricinfo : www
+ scrum    : na
+cu:
+ country  : Cuba
+ cricinfo : www
+ scrum    : na
+dm:
+ country  : Dominica
+ cricinfo : wi
+ scrum    : na
+ espnf1   : en
+do:
+ country  : Dominican Republic
+ cricinfo : www
+ scrum    : na
+sv:
+ country  : El Salvador
+ cricinfo : www
+ scrum    : na
+gl:
+ country  : Greenland
+ cricinfo : www
+ scrum    : na
+gd:
+ country  : Grenada
+ cricinfo : wi
+ scrum    : na
+ espnf1   : en
+gp:
+ country  : Guadeloupe
+ cricinfo : www
+ scrum    : na
+ espnf1   : fr
+gt:
+ country  : Guatemala
+ cricinfo : www
+ scrum    : na
+ht:
+ country  : Haiti
+ cricinfo : www
+ scrum    : na
+ espnf1   : fr
+hn:
+ country  : Honduras
+ cricinfo : www
+ scrum    : na
+jm:
+ country  : Jamaica
+ cricinfo : wi
+ scrum    : na
+ espnf1   : en
+mq:
+ country  : Martinique
+ cricinfo : www
+ scrum    : na
+ espnf1   : fr
+mx:
+ country  : Mexico
+ cricinfo : www
+ scrum    : na
+ms:
+ country  : Montserrat
+ cricinfo : wi
+ scrum    : na
+ espnf1   : en
+an:
+ country  : Netherlands Antilles
+ cricinfo : www
+ scrum    : na
+ espnf1   : en
+ni:
+ country  : Nicaragua
+ cricinfo : www
+ scrum    : na
+pa:
+ country  : Panama
+ cricinfo : www
+ scrum    : na
+pr:
+ country  : Puerto Rico
+ cricinfo : usa
+ scrum    : na
+ espnf1   : en_US
+bl:
+ country  : Saint Barthelemy
+ cricinfo : www
+ scrum    : na
+ espnf1   : fr
+kn:
+ country  : Saint Kitts and Nevis
+ cricinfo : wi
+ scrum    : na
+ espnf1   : en
+lc:
+ country  : Saint Lucia
+ cricinfo : wi
+ scrum    : na
+ espnf1   : en
+mf:
+ country  : Saint Martin
+ cricinfo : wi
+ scrum    : na
+ espnf1   : fr
+pm:
+ country  : Saint Pierre and Miquelon
+ cricinfo : www
+ scrum    : na
+ espnf1   : fr
+vc:
+ country  : Saint Vincent and the Grenadines
+ cricinfo : wi
+ scrum    : na
+ espnf1   : en
+tt:
+ country  : Trinidad and Tobago
+ cricinfo : wi
+ scrum    : na
+ espnf1   : en
+tc:
+ country  : Turks and Caicos Islands
+ cricinfo : wi
+ scrum    : na
+ espnf1   : en
+us:
+ country  : United States
+ cricinfo : usa
+ scrum    : na
+ espnf1   : en_US
+vg:
+ country  : Virgin Islands, British
+ cricinfo : wi
+ scrum    : na
+ espnf1   : en
+vi:
+ country  : Virgin Islands, U.S.
+ cricinfo : wi
+ scrum    : na
+ espnf1   : en_US
+
+### CONTINENT OC ###
+
+as:
+ country  : American Samoa
+ cricinfo : nz
+ scrum    : oc
+ espnf1   : en_US
+au:
+ country  : Australia
+ cricinfo : aus
+ scrum    : oc
+ espnf1   : en_AU
+ck:
+ country  : Cook Islands
+ cricinfo : nz
+ scrum    : oc
+ espnf1   : en_AU
+fj:
+ country  : Fiji
+ cricinfo : aus
+ scrum    : oc
+ espnf1   : en
+pf:
+ country  : French Polynesia
+ cricinfo : nz
+ scrum    : oc
+ espnf1   : fr
+gu:
+ country  : Guam
+ cricinfo : eap
+ scrum    : oc
+ espnf1   : en_US
+ki:
+ country  : Kiribati
+ cricinfo : eap
+ scrum    : oc
+ espnf1   : en
+mh:
+ country  : Marshall Islands
+ cricinfo : eap
+ scrum    : oc
+ espnf1   : en
+fm:
+ country  : Micronesia, Federated States of
+ cricinfo : eap
+ scrum    : oc
+ espnf1   : en
+nr:
+ country  : Nauru
+ cricinfo : eap
+ scrum    : oc
+ espnf1   : en
+nc:
+ country  : New Caledonia
+ cricinfo : aus
+ scrum    : oc
+ espnf1   : fr
+nz:
+ country  : New Zealand
+ cricinfo : nz
+ scrum    : oc
+ espnf1   : en_AU
+nu:
+ country  : Niue
+ cricinfo : nz
+ scrum    : oc
+ espnf1   : en_AU
+nf:
+ country  : Norfolk Island
+ cricinfo : aus
+ scrum    : oc
+ espnf1   : en_AU
+mp:
+ country  : Northern Mariana Islands
+ cricinfo : eap
+ scrum    : oc
+ espnf1   : en_US
+pw:
+ country  : Palau
+ cricinfo : eap
+ scrum    : oc
+ espnf1   : en
+pg:
+ country  : Papua New Guinea
+ cricinfo : aus
+ scrum    : oc
+ espnf1   : en
+pn:
+ country  : Pitcairn
+ cricinfo : nz
+ scrum    : oc
+ espnf1   : en
+ws:
+ country  : Samoa
+ cricinfo : nz
+ scrum    : oc
+ espnf1   : en
+sb:
+ country  : Solomon Islands
+ cricinfo : aus
+ scrum    : oc
+ espnf1   : en
+tk:
+ country  : Tokelau
+ cricinfo : nz
+ scrum    : oc
+ espnf1   : en_AU
+to:
+ country  : Tonga
+ cricinfo : nz
+ scrum    : oc
+ espnf1   : en
+tv:
+ country  : Tuvalu
+ cricinfo : nz
+ scrum    : oc
+ espnf1   : en
+um:
+ country  : United States Minor Outlying Islands
+ cricinfo : usa
+ scrum    : oc
+ espnf1   : en_US
+vu:
+ country  : Vanuatu
+ cricinfo : aus
+ scrum    : oc
+ espnf1   : en
+wf:
+ country  : Wallis and Futuna
+ cricinfo : nz
+ scrum    : oc
+ espnf1   : fr
+
+### CONTINENT SA ###
+
+ar:
+ country  : Argentina
+ cricinfo : www
+ scrum    : sa
+bo:
+ country  : Bolivia
+ cricinfo : www
+ scrum    : sa
+br:
+ country  : Brazil
+ cricinfo : www
+ scrum    : sa
+cl:
+ country  : Chile
+ cricinfo : www
+ scrum    : sa
+co:
+ country  : Colombia
+ cricinfo : www
+ scrum    : sa
+ec:
+ country  : Ecuador
+ cricinfo : www
+ scrum    : sa
+fk:
+ country  : Falkland Islands (Malvinas)
+ cricinfo : uk
+ scrum    : uk
+ espnf1   : en_UK
+gf:
+ country  : French Guiana
+ cricinfo : www
+ scrum    : sa
+ espnf1   : fr
+gy:
+ country  : Guyana
+ cricinfo : wi
+ scrum    : sa
+ espnf1   : en
+py:
+ country  : Paraguay
+ cricinfo : www
+ scrum    : sa
+pe:
+ country  : Peru
+ cricinfo : www
+ scrum    : sa
+sr:
+ country  : Suriname
+ cricinfo : www
+ scrum    : sa
+uy:
+ country  : Uruguay
+ cricinfo : www
+ scrum    : sa
+ve:
+ country  : Venezuela
+ cricinfo : www
+ scrum    : sa
+
