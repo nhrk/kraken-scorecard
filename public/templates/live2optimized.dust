@@ -1,0 +1,621 @@
+{>"layouts/live" /}
+
+{<head}
+	<meta name="google-site-verification" content="ZxdgH3XglRg0Bsy-Ho2RnO3EE4nRs53FloLS6fkt_nc" />
+	<title>{title}</title>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<meta name="keywords" content="{keywords}" />
+	<meta name="description" content="{description}" />
+	<meta name="robots" content="index, follow" />
+	<meta name="googlebot" content="index, follow" />
+	<!-- Redirect in case javascript is disabled on the page -->
+	<noscript>
+	<meta http-equiv="refresh" content="0; url=http://www.espncricinfo.com/{match.url_component}/engine/current/match/{matchId}.html?version=iframe" />
+	</noscript>
+	<!-- Redirect in case of browsers less than IE8 -->
+	<!--[if lt IE 8]>
+	<meta http-equiv="refresh" content="0; url=http://www.espncricinfo.com/{match.url_component}/engine/current/match/{matchId}.html?version=iframe" />
+	<![endif]-->
+	<!-- Cricinfo Global News RSS feed link -->
+	<link href="/rss/content/story/feeds/0.xml" rel="alternate" type="application/rss+xml" title="Global News RSS Feed" />
+	<link href="/rss/livescores.xml" rel="alternate" type="application/rss+xml" title="Cricinfo live scores RSS feed" />
+	<meta property="og:title" content="{match.current_summary_abbreviation} | Live Scorecard | ESPN Cricinfo"/>
+	<meta property="og:description" content="Live cricket score and commentary for {description}"/>
+	<link rel="canonical" href="http://www.espncricinfo.com/{match.url_component}/engine/current/match/{matchId}.html" />
+	<meta property="og:url" content="http://www.espncricinfo.com/{match.url_component}/engine/current/match/{matchId}.html" />
+	<meta property="og:site_name" content="Cricinfo" />
+	<meta property="og:type" content="article"/>
+	<meta property="fb:app_id" content="260890547115" />
+	<meta property="fb:admins" content="507509800,543647230,521294616,502164596,548845180,100000100658108,738070288" />
+	<link rel="image_src" href="http://i.imgci.com/espncricinfo/facebook/3.jpg" />
+	<meta property="og:image" content="http://i.imgci.com/espncricinfo/facebook/3.jpg" />
+	<link rel="apple-touch-icon" href="http://i.imgci.com/espncricinfo/ci_apple_webclip.png"/>
+	<!-- load libraries for scorecard -->
+	<script src="{domain}/navigation/cricinfo/ci/scorecard/js/min/lib.js"></script>
+	<link rel="stylesheet" href="http://a.espncdn.com/combiner/c?css=fonts/bentonsans.css,fonts/bentonsansbold.css,fonts/bentonsanslight.css,fonts/bentonsansmedium.css" type="text/css" media="screen" charset="utf-8">
+	<link rel="stylesheet" href="{domain}/navigation/cricinfo/ci/scorecard/css/app.css?{mtimes.app__css}" />
+	<!--[if lt IE 9]>
+	<link rel="stylesheet" type="text/css" href="{domain}/navigation/cricinfo/ci/scorecard/css/ie8.css?{mtimes.ie8__css}" />
+	<![endif]-->
+	<link rel="stylesheet" type="text/css" href="{domain}/navigation/cricinfo/ci/scorecard/css/swipebox.css" media="screen" />
+	<script src="{domain}/navigation/cricinfo/ci/scorecard/js/lib/custom.modernizr.js"></script>
+	<script src="http://a.espncdn.com/combiner/c?js=plugins/jquery.metadata.js,plugins/jquery.pubsub.r5.js,plugins/ba-debug-0.4.js,espn.l10n.r12.js,espn.core.duo.r55.js,espn.storage.r6.js,espn.p13n.r16.js,cricinfo/espn.video.r82.6.js"></script>
+	<script language="javascript"  type="text/javascript">
+		if (typeof $ === 'undefined'){
+			var $ = jQuery;
+		}
+		ord=Math.random()*10000000000000000;
+		var ad_counter = 1;
+		/*Assign globals explicitly*/
+		window.cqanswer = '{cqanswer}';
+		window.location_country = '{country}';
+		window.location_cluster = '{cluster}';
+		/*window.__jsonP = '?callback=?';*/
+		window.__proxyUrl = '/proxy?url=';
+	</script>
+	{+getset /}
+{/head}
+
+{<body}
+		{+time/}
+		<div class="row">
+			{cms_menu|s}
+			{+topstrip /}
+		</div>
+		<!-- Header - Logo & Ad -->
+		<div class="row">
+			<div class="large-20 columns header-block">
+				<div class="row">
+					<div class="large-5 medium-5 columns logo">
+						<a href="/ci/content/site/"><img src="http://i.imgci.com/espncricinfo/scorecard/logo_espn_cricinfo_livescore.jpg" alt="" title="" /></a>
+					</div>
+					<div class="large-15 medium-15 columns text-right">
+						<div class="ad-leaderboard">
+							{ads.leaderboard|s}
+						</div>
+					</div>
+				</div>
+				<hr>
+			</div>
+		</div>
+		<!-- End -->
+		
+		<div id="matchId" data-matchId="{matchId}" data-contentId="{contentId}" data-endpoint="{Env_SERVER_NAME}" data-complete="{match.match_status}" data-netstorage="{ENABLE_NETSTORAGE}" {?cluster} data-cluster="{cluster}" {/cluster}></div>
+		<!-- Match Information Strip, Social Share, Desktop Score -->
+		
+		<!-- Content - #LHS & #RHS -->
+		<div class="row">
+			<!-- LHS - Live Score Tabs, Scores, Commentary, #Central Thin Column -->
+			<div class="large-10 medium-13 columns">
+				<!-- Underhead Ad Slots -->
+				{ads.strip_lhs_615|s}
+				<!-- End -->
+				<!-- Match Information -->
+				<div class="match-information-strip">
+					{match_info}
+				</div>
+				<!-- End -->
+				<!-- Score Tabs -->
+				{tabs_live|s}
+				<!-- End -->
+				<div id="main_content">
+					{livecontainer|s}
+					<div class="row">
+						<div class="large-16 medium-16 columns hide" id="commIFrame">
+							<a class="closeBox" href="">×</a>
+							<iframe name="commfeedback"  id="iframe-commentary-feedback" src='javascript:""' name="iframecommentaryfeedback" style="border: 0; display: none;" frameborder="0" scrolling="no"></iframe>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- RHS - Match Cards, Ad Slot, Graph, Match Center, Match Coverage, Twitter Module -->
+			<div class="large-10 medium-7 columns" id="rhs_content">
+				<!-- Match Cards & Ad Slot -->
+				<div class="row">
+					{ads.strip_rhs_310|s}
+					{live_stream|s}
+					<!-- Match Cards -->
+					<div class="large-10 medium-20 columns text-right match-card-template" id="matchCardBlock">
+						{+match_card /}
+					</div>
+					<!-- End -->
+					<!-- Ad Slot 300x250 -->
+					<div class="large-10 ad-mpu-320 columns text-right">
+						{>"partials/ads/scorecard/mpu"/}
+					</div>
+					<!-- End -->
+				</div>
+				{?showBet365}
+				<div class="row">
+					{ads.bet365|s}
+				</div>
+				{/showBet365}
+				
+				{@eq key="{ballbyball_source}" value="feedback"}
+				<!-- START mcr -->
+				<div class="large-20 mcr_h2">
+					<h2>MATCH CENTRE</h2>
+				</div>
+				<div id="mcr" class="mcr-inn">
+					<div class="row mcr-overview">
+						<div class="mcr-all-control large-4 columns">
+							
+						</div>
+					</div>
+					<div class="row mcr-batsmen">
+					</div>
+					<div id="mcr-batting-temp" class="row mcr-vis" style="display:none;">
+						{+batting_temp/}
+					</div>
+					<div id="mcr-bowling-temp" class="row mcr-vis" style="display:none;">
+						{+bowling_temp/}
+					</div>
+					<div id="mcr-innings-temp" class="row mcr-vis">
+						<!-- START Innings card current players -->
+						<div class="mcr-inn-current-players large-14 columns">
+							<!-- START current batsmen-->
+							<ul class="mcr-inn-current-batsmen row">
+								<!-- START batsman 0-->
+								<li class="mcr-inn-current-player large-10 columns cbat0">
+									<div class="row mcr-inn-player-text">
+										
+									</div>
+									<div class="row mcr-inn-player-graphic">
+										<div class="large-10 columns">
+											<div class="mcr-inn-bat0-control">
+											</div>
+											<div class="pref-shot">
+												<p>Productive Shot</p>
+												<p class="shotname"></p>
+											</div>
+										</div>
+										<div class="large-10 columns mcr-inn-bat0-wagon">
+										</div>
+									</div>
+								</li>
+								<!-- END batsman 0-->
+								<!-- START batsman 1-->
+								<li class="mcr-inn-current-player large-10 columns cbat1">
+									<div class="row mcr-inn-player-text">
+										
+									</div>
+									<div class="row mcr-inn-player-graphic">
+										<div class="large-10 columns">
+											<div class="mcr-inn-bat1-control">
+											</div>
+											<div class="pref-shot">
+												<p>Productive Shot</p>
+												<p class="shotname"></p>
+											</div>
+										</div>
+										<div class="large-10 columns mcr-inn-bat1-wagon">
+										</div>
+									</div>
+								</li>
+								<!-- END batsman 1-->
+							</ul>
+							<!-- END current batsmen-->
+							<!-- START current bowlers -->
+							<ul class="mcr-inn-current-bowlers row">
+								<!-- START bowler 0-->
+								<li class="mcr-inn-current-player large-10 columns cbowl0">
+									<div class="row mcr-inn-player-text">
+									</div>
+									<div class="row mcr-inn-player-graphic">
+										<div class="large-10 columns mcr-inn-bowler0-heatmap-rhb">
+											<p class="heatmap-title">RHB</p>
+										</div>
+										<div class="large-10 columns mcr-inn-bowler0-heatmap-lhb">
+											<p class="heatmap-title">LHB</p>
+										</div>
+									</div>
+								</li>
+								<!-- END bowler 0 -->
+								<!-- START bowler 1-->
+								<li class="mcr-inn-current-player large-10 columns cbowl1">
+									<div class="row mcr-inn-player-text">
+									</div>
+									
+									<div class="row mcr-inn-player-graphic">
+										<div class="large-10 columns mcr-inn-bowler1-heatmap-rhb">
+											<p class="heatmap-title">RHB</p>
+										</div>
+										<div class="large-10 columns mcr-inn-bowler1-heatmap-lhb">
+											<p class="heatmap-title">LHB</p>
+										</div>
+									</div>
+								</li>
+								<!-- END bowler 1-->
+							</ul>
+							<!-- END current bowlers -->
+						</div>
+						<!-- END Innings card current players -->
+						<div class="mcr-inn-partnerships large-6 columns">
+							<div class="row">
+								<h4>Partnerships</h4>
+							</div>
+							<div class="row mcr-inn-partnerships-chart">
+							</div>
+						</div>
+					</div>
+					<div class="row mcr-bowlers">
+					</div>
+				</div>
+				<!-- END mcr -->
+				{/eq}
+				<div class="row">
+					{match_coverage|s}
+				</div>
+				<div class="row">
+					{+match_photos /}
+				</div>
+				<!-- social module -->
+				<div class="row">
+					<div class="large-10 medium-20 columns">
+						<!-- Twitter Module -->
+						{>"partials/twitter"/}
+					</div>
+					<div class="large-10 medium-20 columns">
+						<div class="sponsored-outbrain">
+							{?isUSA}
+							<style type="text/css">
+							.OUTBRAIN{width:300px; margin:0px; clear:both; background:#FFF; }
+							.OUTBRAIN .AR_2 ul { list-style-type: none; padding-left: 0;}
+							.OUTBRAIN .AR_2 .odb_li{background: url("http://i.imgci.com/espncricinfo/ciHome_separatornew.gif") repeat-x left bottom;}
+							.OUTBRAIN .ob-text-content{padding:5px 0 !important;}
+							</style>
+							<div class="OUTBRAIN" data-src="http://www.espncricinfo.com/{match.url_component}/engine/current/match/{matchId}.html" data-widget-id="AR_2" data-ob-template="espncricinfo" ></div>
+							<script type="text/javascript" src="http://widgets.outbrain.com/outbrain.js"></script>
+							{:else}
+							<h6>Sponsored Links</h6>
+							{sponsored_links|s}
+							{/isUSA}
+						</div>
+					</div>
+				</div>
+				<!-- social module end -->
+			</div>
+			<!-- End -->
+		</div>
+	</div>
+	<!-- Workaround for templates in IE8 -->
+	<!--[if lte IE 8]>
+	<script type="text/javascript">
+		var espn = espn || {};
+		espn.templates = {};
+	</script>
+	<![endif]-->
+	<!-- Include js files before closing of body tag -->
+	<script src="{domain}/navigation/cricinfo/ci/scorecard/js/min/templates.js?{mtimes.templates__js}"></script>
+	<script src="{domain}/navigation/cricinfo/ci/scorecard/js/min/plugin.js?{mtimes.plugin__js}"></script>
+	<script src="{domain}/navigation/cricinfo/ci/scorecard/js/lib/jquery.foundation.tabs.js"></script>
+	<!-- <script src="{domain}/navigation/cricinfo/ci/scorecard/js/src/app.js?{mtimes.app__js}"></script>
+	// <script src="{domain}/navigation/cricinfo/ci/scorecard/js/src/global.js?{mtimes.global__js}"></script> -->
+	<script src="http://questfx.net/cdn/js/scorecard/05may/app.js"></script>
+	<script src="http://questfx.net/cdn/js/scorecard/05may/global.js"></script>
+	<script src="{domain}/navigation/cricinfo/ci/scorecard/js/min/espn.gfx.js?{mtimes.espn__gfx__js}"></script>
+	<script src="http://questfx.net/cdn/js/scorecard/05may/matchcenter.js"></script>
+	<!-- <script src="{domain}/navigation/cricinfo/ci/scorecard/js/src/matchcenter.js?{mtimes.matchcenter__js}"></script> -->
+	<script type="text/javascript" src="{domain}/navigation/cricinfo/ci/scorecard/js/lib/jquery.swipebox.js"></script>
+	<!-- <script src="http://questfx.net/cdn/js/lib/dust-full.min.js"></script>
+	<script src="http://questfx.net/cdn/js/scorecard/templates.js"></script> -->
+	<script type="text/javascript">
+		//foundation tabs
+		jQuery(document).foundationTabs();
+	</script>
+	{>"partials/omniture_global"/}
+	{>"partials/chartbeat"/}
+	{@eq key="{cluster}" value="aus"}
+	<script src="http://tags.crwdcntrl.net/c/3925/cc.js?ns=_cc3925" id="LOTCC_3925"></script>
+	<script>
+		_cc3925.bcp();
+	</script>
+	{/eq}
+	<div class="mcr-tooltip"><h2 class="mcr-tooltip-title"></h2><p class="mcr-tooltip-content"></p></div>
+{/body}
+
+{<getset}
+<script type="text/javascript">
+
+function setCookie( name, value, expires, path, domain, secure ) {
+
+var today = new Date();
+
+	today.setTime( today.getTime() );
+	if ( expires ) {
+		expires = expires * 1000 * 60 * 60 * 24;
+	 }
+
+	 var expires_date = new Date( today.getTime() + (expires) );
+
+	 document.cookie = name+'='+escape( value ) + 
+					   ( ( expires ) ? ';expires='+expires_date.toGMTString() : '' ) + 
+					   ( ( path ) ? ';path=' + path : '' ) +
+					   ( ( domain ) ? ';domain=' + domain : '' ) +
+					   ( ( secure ) ? ';secure' : '' );
+
+}
+
+function getCookie(name) {
+
+	var start = document.cookie.indexOf( name + "=" );
+	var len = start + name.length + 1;
+
+	if ( ( !start ) && ( name != document.cookie.substring( 0, name.length ) ) ) {
+	   return null;
+	}
+
+	if ( start == -1 ) return null;
+	var end = document.cookie.indexOf( ';', len );
+	if ( end == -1 ) end = document.cookie.length;
+	return unescape( document.cookie.substring( len, end ) );
+}
+
+function removeCookie(  name, path, domain) {
+	if ( getCookie( name ) )
+	{
+		document.cookie = name + '=' + ( ( path ) ? ';path=' + path : '') + ( ( domain ) ? ';domain=' + domain : '' ) + ';expires=Thu, 01-Jan-1970 00:00:01 GMT';
+	}
+}
+
+function getDomainname () {
+	var hostname = window.location.hostname.split('.');
+	if ( hostname.length >= 2 ) {
+		var len = hostname.length;
+		var domainname = '.' +  hostname[len - 2] + '.' + hostname[len - 1];
+	} else {
+		var domainname = '.' + window.location.hostname;
+	}
+	return domainname;
+}
+</script>
+{/getset}
+
+{<match_photos}
+{@gt key="{match_photos.rows}" value="0"}
+<div class="large-20 columns photos-block" id="photos-block">
+	<h5 class="uppercase">Photos</h2>
+	<div>
+		<div>
+			<ul>
+				<li class="box1">
+					<a href="" data-id="" title="">
+					<img src="" id="imgMain" align="center" >
+					</a>
+				</li>
+			</ul>
+		</div>
+		{@gt key="{match_photos.rows}" value="1"}
+		<div  class="photoes-nav">
+			<a href="#" class="prevBtn pagination-but left-nav prevInactive" >&lsaquo;</a>
+			<a href="#" class="nextBtn pagination-but right-nav" >&rsaquo;</a>
+		</div>
+		{/gt}
+		<div id="imgLoading" style="display: block;">
+			<img src="http://i.imgci.com/espncricinfo/lightbox-ico-loading.gif" align="center" height="32" width="32">
+		</div>
+		<p>
+		<span></span>
+		</p>
+	</div>
+	<div class="photos-list">
+		<ul>
+			<li><a id="firstPhoto" href="javascript:void(0);">Back to Latest Photo</a></li>
+			{! Improve the conditional statement !}
+			{@eq key="{match.url_component}" value="wctimeline"}
+			<li><a href='/ci/content/image/index.html?object={matchId}' target="_blank">All Photos for this match</a></li>
+			<li><a class="no-border" href='/ci/content/gallery/index.html?object={matchId};cat=current' target="_blank">Galleries</a></li>
+			{:else}
+			<li><a href='/{match.url_component}/content/image/index.html?object={matchId}' target="_blank">All Photos for this match</a></li>
+			<li><a class="no-border" href='/{match.url_component}/content/gallery/index.html?object={matchId};cat=current' target="_blank">Galleries</a></li>
+			{/eq}
+		</ul>
+	</div>
+	<hr class="thick-2">
+	<div class="rhscontent-loader"><img style="margin: auto; margin-top: 40px;" src="http://i.imgci.com/espncricinfo/gfx/loading.gif" /></div>
+</div>
+{/gt}
+{/match_photos}
+
+{<match_card}
+<div class="match-card-block">
+	<ul id="suffleDiv">
+		<li style="text-align:center;">
+			<img style="margin-top:90px;display:inline-block" src="http://i.imgci.com/espncricinfo/mobileweb/smartphone/ajax-loader.gif">
+		</li>
+	</ul>
+	<div class="match-card-nav" id="matchCardNav">
+		<span id="match-card-prev">&nbsp;</span>
+		<span id="match-card-next">&nbsp;</span>
+	</div>
+</div>
+{/match_card}
+
+{<time}
+	{?requestTime}
+		<div style="color:red;">Request Time: {requestTime}</div>
+	{/requestTime}
+{/time}
+
+{<topstrip}
+<div class="large-20 columns">
+	<div class="masthead-block">
+		<div class="large-1 medium-2 columns home">
+			<a href="/" alt="Home" title="Home"><img src="http://i.imgci.com/espncricinfo/scorecard/icon_home-black.jpg" alt="" title="" /></a>
+		</div>
+		<div class="large-10 medium-8 columns score-strip-block">
+			<div class="row">
+				<ul class="large-13 medium-8 columns score-strip inline-list" id="top-strip-livescore">
+					<!--<li><a href="#">Ind 527/7d & 172/4d<br>v SA 365 & 37/3 (20.3ov)</a></li>
+					<li><a href="#">Ind 527/7d & 172/4d<!-- <br>v SA 365 & 37/3 (20.3ov) --><!--</a></li>
+					<li class="remove-border-right"><a href="#">Ind 527/7d & 172/4d<!-- <br>v SA 365 & 37/3 (20.3ov) --><!--</a></li>-->
+				</ul>
+				<div class="large-7 medium-12 columns match-select">
+					<div class="large-20 medium-20">
+						<div class="large-19 medium-20" id="defTxt">
+							<span></span>
+							<input id="drop" type="button" value="" />
+						</div>
+					</div>
+					<div class="row">
+						<div class="large-20 medium-20 columns marginTop">
+							<ul id="droplist" class="large-20 medium-20 columns">
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="large-5 medium-6 columns link-strip-block">
+			<ul class="link-strip inline-list">
+				<li><a href="http://static.espncricinfo.com/rss/livescores.xml" target="_blank"><img src="http://i.imgci.com/espncricinfo/scorecard/rss.png"></a></li>
+				<li><a href="/ci/engine/match/scores/live.html" target="_blank">All live games</a></li>
+				<li><a href="/ci/content/match/fixtures/live.html" target="_blank">Fixtures</a></li>
+				<li class="remove-border-right"><a href="/ci/engine/match/scores/recent.html" target="_blank">Results</a></li>
+			</ul>
+		</div>
+		<div class="large-4 medium-4 columns search-block">
+			<form method="get" enctype="application/x-www-form-urlencoded" action="/ci/content/site/search.html">
+				<input class="search-field" name="search" type="text" value="Search" onfocus="if(this.value == 'Search') {this.value=''}"  onblur="if(this.value == ''){this.value ='Search'}" />
+				<input type="submit" name="gblsearch" class="srch-icon" value="" />
+			</form>
+		</div>
+	</div>
+</div>
+{/topstrip}
+
+{<batting_temp}
+<div id="bat_top_strip" class="row mcr-inn-player-text">
+	
+</div>
+<div class="large-20">
+	<div class="large-8 mcr-bat-left">
+		 <div class="mcr-bat-upper" id="mcr-graph-filter">            
+            <span id="firstchart" data-chart="mcr-batcard-spike" class="active">
+                <img src="http://i.imgci.com/espncricinfo/scorecard/mcr_stroke.png" title="stroke" />
+            </span>
+            <span data-chart="mcr-batcard-wagon">
+                <img src="http://i.imgci.com/espncricinfo/scorecard/mcr_wagon.png" title="wagon" />
+            </span>
+            <span data-chart="mcr-batcard-line">
+                <img src="http://i.imgci.com/espncricinfo/scorecard/mcr_runstroke.png" title="run stroke" />
+            </span>
+            <span data-chart="mcr-batcard-heatmap">
+                <img src="http://i.imgci.com/espncricinfo/scorecard/mcr_heatmap.png" title="heatmap" />
+            </span>
+        </div>
+        <div class="mcr-bat-down" id="mcr_player_graph">
+            <div id="mcr_bat_type"></div>
+            <div id="mcr-batcard-spike"></div>
+            <div id="mcr-batcard-wagon" style="display:none;"></div>            
+            <div id="mcr-batcard-line" style="display:none;"></div>
+            <div id="mcr-batcard-heatmap" style="display:none;"></div>
+        </div>       
+	</div>
+	<div class="large-12 mcr-bat-right">
+		<div class="mcr-bat-upper">
+            <div class="large-20 columns mcr-filter-1">
+                <span id="mcr-bat-bvfilter"><span>Filter By Bowlers </span><img src="http://i.imgci.com/espncricinfo/scorecard/mcr_drop.png" /></span>
+            </div>
+            <ul id="mcr-bat-drop" style="display:none;">             
+            </ul>
+            <!--<div class="large-3 columns mcr-over">
+                <span>Overs</span>
+            </div>
+            <div class="large-6 columns mcr-over-filter">
+                <span><input type="text" value="from" /></span><span>&nbsp;-&nbsp;</span><span> <input type="text" value="to" /></span>
+            </div>
+            <div class="large-4 columns mcr-filter-2">
+                <span id="over-filter">FILTER</span>
+            </div>-->
+        </div>
+        <div class="mcr-bat-down">
+            <div id="bowling-data">
+            </div>
+             <div class="mcr-bat-summary large-20 columns">
+                <div class="large-4" id="zonefilter">
+                    <ul>
+                        <li class="mcr-fltr-header">Filter zones</li>
+                        <li id="filter-wagon"></li>
+                        <li><input type="checkbox" id="mcr_show_all" name="mcr_show_all">Show all</li>
+                    </ul>                                    
+                </div>
+                <div class="large-6 filters" id="runfilter">
+                    <ul>
+                        <li class="mcr-fltr-header">Filter by runs</li>
+                        <li>
+                            <span><input type="checkbox" class="mcr_check" checked value="1"><span class="ones">1s</span> </span>
+                            <span> <input type="checkbox" class="mcr_check" checked value="2"><span class="twos">2s</span> </span>
+                        </li>
+                        <li>
+                            <span><input type="checkbox" class="mcr_check" checked value="3"><span class="threes">3s</span> </span>
+                            <span> <input type="checkbox" class="mcr_check" checked value="4"><span class="fours">4s</span> </span>
+                        </li>
+                        <li>
+                            <span><input type="checkbox" class="mcr_check" checked value="5"><span class="fives">5s</span> </span><span> <input type="checkbox" checked class="mcr_check" value="6"><span class="sixs">6s</span> </span>
+                        </li>
+                        <li><span><input type="checkbox" class="mcr_check" checked value="all">All </span></li>
+                    </ul>
+                </div>
+                <div class="large-10 summary" id="summaryfilter">
+                
+                    
+                </div>
+            </div>
+        
+        </div>
+	</div>
+</div>
+
+{/batting_temp}
+
+{<bowling_temp}
+<div id="bowl_top_strip" class="row mcr-inn-player-text">
+    
+</div>
+<div class="large-20 columns mcr-bowl-filter">
+    <div class="large-8 columns">
+    </div>
+    <div class="large-12 columns">
+        <div class="large-20 columns mcr-filter-1">
+            <span id="mcr-bowl-bvfilter"><span>Filter By Batsman</span><img src="http://i.imgci.com/espncricinfo/scorecard/mcr_drop.png" /></span>
+            <ul id="mcr-bowl-drop" style="display:none;">				
+            </ul>
+        </div>
+        <!--<div class="large-3 columns mcr-over">
+            <span>Overs</span>
+        </div>
+        <div class="large-7 columns mcr-over-filter">
+            <span><input type="text" value="from" /></span><span>&nbsp;-&nbsp;</span><span> <input type="text" value="to" /></span>
+        </div>
+        <div class="large-3 columns mcr-filter-2">
+            <span id="over-filter">FILTER</span>
+        </div>-->
+    </div>
+</div>
+<div class="large-20 columns mcr-bowl-div">
+    <div class="large-10 columns" id="mcr-bowl-rhb">
+    	<div class="large-20 columns header"><span>RHB</span></div>
+        <div class="large-10 columns" id="mcr-bowl-heatmap-rhb">
+        </div>
+        <div class="large-10 columns" id="mcr-bowl-wagon-rhb">
+           
+        </div>
+        <div class="large-20 columns mcr-bowl-down">
+	        
+	    </div>
+    </div>
+    <div class="large-10 columns" id="mcr-bowl-lhb">
+    	<div class="large-20 columns header"><span>LHB</span></div>
+		<div class="large-10 columns" id="mcr-bowl-heatmap-lhb">
+        </div>
+        <div class="large-10 columns" id="mcr-bowl-wagon-lhb">
+           
+        </div>
+         <div class="large-20 columns mcr-bowl-down">
+	        
+	    </div>
+    </div>
+</div>
+
+{/bowling_temp}

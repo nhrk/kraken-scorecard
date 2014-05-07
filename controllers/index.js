@@ -54,6 +54,7 @@ module.exports = function(app) {
 			geoData = geo.get(ip),
 			cluster = geoData.cluster,
 			country = geoData.country,
+			layout = req.param('layout') || 'live2optimized',
 			cacheEnabled = req.param('cache');
 
 		if(/localcms|dev|hq/.test(host)){
@@ -69,7 +70,7 @@ module.exports = function(app) {
 			cache[url] = cache[url] || {};
 
 			if(cache[url].data && (new Date() - cache[url].time < cacheDuration)){
-				res.render('scorecard', cache[url].data);
+				res.render(layout, cache[url].data);
 				return;
 			}
 		}
@@ -139,7 +140,7 @@ module.exports = function(app) {
 				}
 
 				console.log('Rendered');
-				res.render('live2', json);
+				res.render(layout, json);
 
 			} else {
 				console.log('else error');
