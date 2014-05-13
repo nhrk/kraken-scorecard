@@ -51,7 +51,9 @@
 		window.location_country = '{country}';
 		window.location_cluster = '{cluster}';
 		/*window.__jsonP = '?callback=?';*/
+		{?crossOriginRequest}
 		window.__proxyUrl = '/proxy?url=';
+		{/crossOriginRequest}
 	</script>
 	{+getset /}
 {/head}

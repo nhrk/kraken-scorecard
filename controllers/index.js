@@ -10,12 +10,12 @@ module.exports = function(app) {
 		geo = require('../lib/geo.js'),
 		Timer = require('../lib/Timer.js'),
 		cache = {},
-		cacheDuration = 10000;
+		cacheDuration = 5000;
 
 	app.get('/', function(req, res) {
 
 		res.render('index', {
-			url: '/live/id/:id',
+			url: '/match/:id',
 			domain: 'domain'
 		});
 
@@ -26,7 +26,7 @@ module.exports = function(app) {
 		var id = req.param('id') || null /* || 578625*/ ,
 			protcol = 'http://',
 			host = req.param('host') || 'www.espncricinfo.com' /*|| 'kilimanjaro.espncricinfo.com'*/ ,
-			auth = false,
+			authRequired = false,
 			path = '/ci/engine/match',
 			url,
 			ip = (req.headers['True-Client-IP'] || req.headers['x-forwarded-for'] || (req.connection.remoteAddress === '127.0.0.1' ? '116.72.156.25' /*'27.4.80.197' '199.88.194.29'*/ : req.connection.remoteAddress)),
@@ -34,11 +34,12 @@ module.exports = function(app) {
 			cluster = geoData.cluster,
 			country = geoData.country,
 			layout = req.param('layout') || 'live2optimized',
-			cacheEnabled = ( !! req.param('cache'));
+			cacheEnabled = ( !! req.param('cache')),
+			requestTime;
 
-		auth = authRequired(host);
+		authRequired = isAuthRequired(host);
 
-		url = protcol + (auth ? uname + ':' + pass + '@' : '') + host + path + '/' + id + '.json' + '?base=' + (req.param('base') || 1) + ';cluster=' + (req.param('cluster') || cluster) + ';country=' + (req.param('country') || country);
+		url = protcol + (authRequired ? uname + ':' + pass + '@' : '') + host + path + '/' + id + '.json' + '?base=' + (req.param('base') || 1) + ';cluster=' + (req.param('cluster') || cluster) + ';country=' + (req.param('country') || country);
 
 		if (cacheEnabled) {
 			cache[url] = cache[url] || {};
@@ -49,16 +50,16 @@ module.exports = function(app) {
 			}
 		}
 
-		var requestTime = Timer('requestTime');
+		// console.log(url); /*'http://www.espncricinfo.com/ci/engine/match/578625.json?base=1;cluster=ind;country=in'*/
 
-		url = protcol + (auth ? uname + ':' + pass + '@' : '') + host + path + '/' + id + '.json' + '?base=' + (req.param('base') || 1) + ';cluster=' + (req.param('cluster') || cluster) + ';country=' + (req.param('country') || country);
-
-		console.log(url); /*'http://www.espncricinfo.com/ci/engine/match/578625.json?base=1;cluster=ind;country=in'*/
+		requestTime = Timer('requestTime');
 
 		request.get({
 			url: url,
 			json: true
-		}, function request(er, response, json) {
+		}, onComplete);
+
+		function onComplete(er, response, json) {
 
 			console.log(requestTime.end());
 
@@ -72,6 +73,8 @@ module.exports = function(app) {
 				json.match.match_status = (json.match.match_status === 'complete') ? 1 : 0;
 
 				json.domain = protcol + host;
+
+				json.crossOriginRequest = !(/^espncricinfo.com|^www.espncricinfo.com/.test(req.headers.host));
 
 				json.cluster = req.param('cluster') || cluster || 'ind';
 
@@ -110,16 +113,18 @@ module.exports = function(app) {
 				}
 
 				res.render(layout, json);
+
 			} else {
 				res.render('errors/500');
 			}
-		});
+		}
 
 		// IND, AUS, PAK, SL, GULF, EAP
 		function isRegionA(cluster) {
 			if (cluster === 'ind' || cluster === 'aus' || cluster === 'pak' || cluster === 'sl' || cluster === 'gulf' || cluster === 'eap') {
 				return true;
 			}
+			return false;
 		}
 
 		// UK, NZ, WI, WWW
@@ -127,9 +132,10 @@ module.exports = function(app) {
 			if (cluster === 'uk' || cluster === 'nz' || cluster === 'wi' || cluster === 'wwww') {
 				return true;
 			}
+			return false;
 		}
 
-		function authRequired(host) {
+		function isAuthRequired(host) {
 			if (/localcms|dev|hq/.test(host)) {
 				return true;
 			}
@@ -145,124 +151,17 @@ module.exports = function(app) {
 			}
 			return url;
 		}
-
 	});
 
 	app.get('/live/id/:id', function(req, res) {
 
 		// Permanent redirect to new location
 		res.writeHead(301, {
-			Location: '/match/' + req.param('id') + _parsedUrl.search
+			Location: '/match/' + req.param('id') + (req._parsedUrl.search || '')
 		});
 		res.end();
 
 		return;
-
-		var id = req.param('id') || 578625,
-			protcol = 'http://',
-			host = req.param('host') || 'kilimanjaro.espncricinfo.com',
-			auth = false,
-			path = '/ci/engine/match',
-			url,
-			ip = (req.headers['True-Client-IP'] || req.headers['x-forwarded-for'] || (req.connection.remoteAddress === '127.0.0.1' ? '116.72.156.25' /*'27.4.80.197' '199.88.194.29'*/ : req.connection.remoteAddress)),
-			geoData = geo.get(ip),
-			cluster = geoData.cluster,
-			country = geoData.country,
-			layout = req.param('layout') || 'live2optimized',
-			cacheEnabled = ( !! req.param('cache'));
-
-		if (/localcms|dev|hq/.test(host)) {
-			auth = true;
-		}
-
-		url = protcol + (auth ? uname + ':' + pass + '@' : '') + host + path + '/' + id + '.json' + '?base=' + (req.param('base') || 1) + ';cluster=' + (req.param('cluster') || cluster) + ';country=' + (req.param('country') || country);
-
-		if (cacheEnabled) {
-			cache[url] = cache[url] || {};
-
-			if (cache[url].data && (new Date() - cache[url].time < cacheDuration)) {
-				res.render(layout, cache[url].data);
-				return;
-			}
-		}
-
-		var requestTime = Timer('requestTime');
-
-		request.get({
-			url: url,
-			json: true
-		}, function request(er, response, json) {
-
-			requestTime.end();
-
-			if (!er && response.statusCode === 200) {
-
-				// var json = JSON.parse(body);
-
-				// Append server details
-				var processTime = Timer('processTime');
-
-				json.date = Date();
-				json.platform = global.process.title + ' ' + global.process.version;
-
-				json.match.match_status = (json.match.match_status === 'complete') ? 1 : 0;
-				json.domain = protcol + host;
-
-				/*TODO: update hardcoded value*/
-				json.cluster = req.param('cluster') || cluster || 'ind';
-				json.isUSA = json.cluster === 'usa' ? true : false;
-				/*TODO: change ci to url component*/
-				json.uri = 'www.espncricinfo.com' + '/ci/engine/match/' + json.matchId + '.html';
-				json.page_url = protcol + json.uri;
-
-				if (req.param('ns')) {
-					json.ENABLE_NETSTORAGE = true;
-				}
-
-				if (json.match.bitly_hash) {
-					json.twt_url = 'http://es.pn/' + json.match.bitly_hash;
-				} else {
-					json.twt_url = json.page_url;
-				}
-
-				if (json.country === 'gb') {
-					json.cqanswer = 'uk';
-				} else if (json.country === 'unknown') {
-					json.cqanswer = '99';
-				} else {
-					json.cqanswer = json.country;
-				}
-
-				if (json.cluster === 'ind' || json.cluster === 'aus' || json.cluster === 'pak' || json.cluster === 'sl' || json.cluster === 'gulf' || json.cluster === 'eap') {
-					json.lhs_615 = true;
-					json.rhs_310 = true;
-				}
-
-				if (json.cluster === 'uk' || json.cluster === 'nz' || json.cluster === 'wi' || json.cluster === 'wwww') {
-					json.showBet365 = true;
-				}
-
-				if (req.param('time')) {
-					json.requestTime = requestTime.time().time;
-				}
-
-				if (cacheEnabled) {
-					cache[url].data = cache[url].data || json;
-					cache[url].time = new Date();
-				}
-
-				// console.log('Rendered');
-				// processTime.end();
-				console.log(processTime.end(), '------------------- PROCESS TIME -------------------');
-				var renderTime = Timer('renderTime');
-				res.render(layout, json);
-				console.log(renderTime.end(), '------------------- RENDER TIME -------------------');
-
-			} else {
-				// console.log('else error');
-				res.render('errors/500');
-			}
-		});
 	});
 
 	app.get('/proxy', function(req, res) {
