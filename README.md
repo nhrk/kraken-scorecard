@@ -12,8 +12,9 @@ Replicate Live scorecard app with Kraken.js using Dust.js and compare performanc
 * PM2 0.7.8 (For clustering)
 
 #### Notes:
-* Added a route in Kraken to make proxy requests to make cross domain.
-* Tweaked clone function in Dust.js parser for improving rendering performance for partials.!critical.
+* Added a route (/proxy) - for cross domain proxy.
+* Tweaked clone function in Dust.js parser for improving rendering performance for partials. !critical
 
 #### TODO:
-* Reuse templates on client and explore more options for code sharing.
+* Reuse templates on client and explore more code sharing possibilities.
+* Integrate monitoring tools.
