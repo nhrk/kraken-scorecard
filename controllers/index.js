@@ -1,4 +1,4 @@
-/*jshint maxcomplexity:24, maxstatements:38 */
+/*jshint maxcomplexity:13, maxstatements:25 */
 'use strict';
 
 module.exports = function(app) {
@@ -43,7 +43,7 @@ module.exports = function(app) {
 			base: (req.param('base') || 1),
 			cluster: (req.param('cluster') || cluster),
 			country: (req.param('country') || country)
-		})
+		});
 
 		// Cache JSON in memory
 		if (cacheEnabled) {
@@ -66,7 +66,7 @@ module.exports = function(app) {
 
 		function onComplete(er, response, json) {
 
-			console.log(requestTime.end());
+			requestTime.end();
 
 			if (!er && response.statusCode === 200) {
 
