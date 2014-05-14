@@ -147,7 +147,7 @@
 					</div>
 					<div class="large-10 medium-20 columns">
 						<div class="sponsored-outbrain">
-							{?isUSA}
+							{@eq key="{cluster}" value="usa"}
 							<style type="text/css">
 								.OUTBRAIN{width:300px; margin:0px; clear:both; background:#FFF; }
 								.OUTBRAIN .AR_2 ul { list-style-type: none; padding-left: 0;}
@@ -159,7 +159,7 @@
 							{:else}
 							<h6>Sponsored Links</h6>
 							{sponsored_links|s}
-							{/isUSA}
+							{/eq}
 						</div>
 					</div>
 				</div>
