@@ -1,4 +1,9 @@
 .DS_Store
+.bowerrc
+.editorconfig
+.jshintignore
+.jshintrc
+.nodemonignore
 .idea/
 .build/
 node_modules/

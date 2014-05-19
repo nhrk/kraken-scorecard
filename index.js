@@ -2,40 +2,39 @@
 
 
 var kraken = require('kraken-js'),
-    express = require('express'),
-    app = {};
+	express = require('express'),
+	app = {};
 
 
 app.configure = function configure(nconf, next) {
-    // Async method run on startup.
-    next(null);
+	// Async method run on startup.
+	next(null);
 };
 
 
 app.requestStart = function requestStart(server) {
-    // Run before most express middleware has been registered.
+	// Run before most express middleware has been registered.
 };
 
 
 app.requestBeforeRoute = function requestBeforeRoute(server) {
-    // Run before any routes have been added.
-    /* Enable gzip compression */
-    server.use(express.compress());
+	// Run before any routes have been added.
+	/* Enable gzip compression */
+	server.use(express.compress());
 };
 
 
 app.requestAfterRoute = function requestAfterRoute(server) {
-    // Run after all routes have been added.
+	// Run after all routes have been added.
 };
 
 
-/* Commenting the IF condition for pm2 (support clustering) */
 // if (require.main === module) {
-    kraken.create(app).listen(function (err) {
-        if (err) {
-            console.error(err.stack);
-        }
-    });
+kraken.create(app).listen(function(err, server) {
+	if (err) {
+		console.error(err.stack);
+	}
+});
 // }
 
 
