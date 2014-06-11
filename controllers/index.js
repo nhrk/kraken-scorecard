@@ -7,6 +7,8 @@ module.exports = function(app) {
 		mime = require('node-mime'),
 		helpers = require('../lib/helpers.js'),
 		config = require('../lib/config.js'),
+		os = require("os"),
+		hostname = os.hostname,
 		uname = config.uname,
 		pass = config.pass,
 		cache = {};
@@ -73,6 +75,8 @@ module.exports = function(app) {
 				json.platform = global.process.title + ' ' + global.process.version;
 
 				json.date = new Date();
+
+				json.hostname = hostname;
 
 				json.match.match_status = (json.match.match_status === 'complete') ? 1 : 0;
 
