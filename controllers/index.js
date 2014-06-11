@@ -28,19 +28,20 @@ module.exports = function(app) {
 		var id = req.param('id') || null /* || 578625*/ ,
 			protcol = 'http://',
 			host = req.param('host') || 'www.espncricinfo.com' /*|| 'kilimanjaro.espncricinfo.com'*/ ,
-			path = '/ci/engine/match',
-			ip = (req.headers['True-Client-IP'] || req.headers['x-forwarded-for'] || (req.connection.remoteAddress === '127.0.0.1' ? '116.72.156.25' /*'27.4.80.197' '199.88.194.29'*/ : req.connection.remoteAddress)),
+			path = '/engine/match',
+			ip = helpers.getClientIP(req),
 			geoData = helpers.geo.parse(ip),
 			cluster = geoData.cluster,
 			country = geoData.country,
 			layout = req.param('layout') || 'live2optimized',
-			cacheEnabled = ( !! req.param('cache')),
+			enableCache = ( !! req.param('cache')),
+			enableTimer = ( !! req.param('time')),
 			requestTime,
 			url;
 
 		url = helpers.getEndpoint({
 			host: host,
-			path: path,
+			path: config.defaultUrlComponent + path,
 			id: id,
 			base: (req.param('base') || 1),
 			cluster: (req.param('cluster') || cluster),
@@ -48,7 +49,7 @@ module.exports = function(app) {
 		});
 
 		// Cache JSON in memory
-		if (cacheEnabled) {
+		if (enableCache) {
 			cache[url] = cache[url] || {};
 
 			if (cache[url].data && (new Date() - cache[url].time < config.cacheDuration)) {
@@ -89,7 +90,7 @@ module.exports = function(app) {
 				json.country = (req.param('country') || country || 'in');
 
 				/*TODO: change ci to url component*/
-				json.uri = host + path + '/' + json.matchId + '.html';
+				json.uri = host + '/' + json.match.url_component + path + '/' + json.matchId + '.html';
 
 				json.page_url = protcol + json.uri;
 
@@ -101,12 +102,14 @@ module.exports = function(app) {
 
 				json.showBet365 = helpers.isRegionB(json.cluster);
 
-				if (req.param('time')) {
-					json.requestTime = requestTime.time().time;
+				if (enableTimer) {
+					json.requestTime = requestTime.getTime().time;
 				}
 
+				requestTime = null;
+
 				// Cache into memory
-				if (cacheEnabled) {
+				if (enableCache) {
 					cache[url].data = cache[url].data || json;
 					cache[url].time = new Date();
 				}
