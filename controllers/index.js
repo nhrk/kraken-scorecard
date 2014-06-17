@@ -26,13 +26,13 @@ module.exports = function(app) {
 	app.get('/match/:id', function(req, res) {
 
 		var id = req.param('id') || null /* || 578625*/ ,
-			protcol = 'http://',
+			protocol = 'http://',
 			host = req.param('host') || 'www.espncricinfo.com' /*|| 'kilimanjaro.espncricinfo.com'*/ ,
 			path = '/engine/match',
 			ip = helpers.getClientIP(req),
 			geoData = helpers.geo.parse(ip),
-			cluster = geoData.cluster,
-			country = geoData.country,
+			cluster = req.param('cluster') || geoData.cluster,
+			country = req.param('country') || geoData.country,
 			layout = req.param('layout') || 'live2optimized',
 			enableCache = ( !! req.param('cache')),
 			enableTimer = ( !! req.param('time')),
@@ -44,8 +44,8 @@ module.exports = function(app) {
 			path: config.defaultUrlComponent + path,
 			id: id,
 			base: (req.param('base') || 1),
-			cluster: (req.param('cluster') || cluster),
-			country: (req.param('country') || country)
+			cluster: cluster,
+			country: country
 		});
 
 		// Cache JSON in memory
@@ -81,25 +81,25 @@ module.exports = function(app) {
 
 				json.match.match_status = (json.match.match_status === 'complete') ? 1 : 0;
 
-				json.domain = protcol + host;
+				json.domain = protocol + host;
 
 				json.crossOriginRequest = helpers.isCrossOrigin(req.headers.host);
 
-				json.cluster = (req.param('cluster') || cluster || 'ind');
+				json.cluster = cluster;
 
-				json.country = (req.param('country') || country || 'in');
+				json.country = country;
 
 				json.uri = host + '/' + json.match.url_component + path + '/' + json.matchId + '.html';
 
-				json.page_url = protcol + json.uri;
+				json.page_url = protocol + json.uri;
 
 				json.twt_url = helpers.getTwitterUrl(json.match.bitly_hash, json.page_url);
 
-				json.cqanswer = helpers.getCQanswer(json.country);
+				json.cqanswer = helpers.getCQanswer(country);
 
-				json.lhs_615 = json.rhs_310 = helpers.isRegionA(json.cluster);
+				json.lhs_615 = json.rhs_310 = helpers.isRegionA(cluster);
 
-				json.showBet365 = helpers.isRegionB(json.cluster);
+				json.showBet365 = helpers.isRegionB(cluster);
 
 				if (enableTimer) {
 					json.requestTime = requestTime.getTime().time;
