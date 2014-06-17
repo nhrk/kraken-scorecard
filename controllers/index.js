@@ -89,7 +89,6 @@ module.exports = function(app) {
 
 				json.country = (req.param('country') || country || 'in');
 
-				/*TODO: change ci to url component*/
 				json.uri = host + '/' + json.match.url_component + path + '/' + json.matchId + '.html';
 
 				json.page_url = protcol + json.uri;
