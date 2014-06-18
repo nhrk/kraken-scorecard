@@ -18,3 +18,14 @@ Replicate Live scorecard app with Kraken.js using Dust.js and compare performanc
 #### TODO:
 * Reuse templates on client and explore more code sharing possibilities.
 * Integrate monitoring tools.
+
+#### NOTES:
+
+Separation of web services layer - LAMP stack
+How can we leverage APIs?
+	Page level APIs
+Why Node.js?
+	Scale/performance
+	Share views/templates
+	Separate Controller logic
+	i18n
