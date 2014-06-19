@@ -2,40 +2,18 @@
 
 
 var kraken = require('kraken-js'),
-	express = require('express'),
-	app = {};
+    app = require('express')(),
+    options = {
+        onconfig: function (config, next) {
+            //any config overriders here
+            next(null, config);
+        }
+    },
+    port = process.env.PORT || 1377;
 
 
-app.configure = function configure(nconf, next) {
-	// Async method run on startup.
-	next(null);
-};
+app.use(kraken(options));
 
-
-app.requestStart = function requestStart(server) {
-	// Run before most express middleware has been registered.
-};
-
-
-app.requestBeforeRoute = function requestBeforeRoute(server) {
-	// Run before any routes have been added.
-	/* Enable gzip compression */
-	server.use(express.compress());
-};
-
-
-app.requestAfterRoute = function requestAfterRoute(server) {
-	// Run after all routes have been added.
-};
-
-
-// if (require.main === module) {
-kraken.create(app).listen(function(err, server) {
-	if (err) {
-		console.error(err.stack);
-	}
+app.listen(port, function (err) {
+    console.log('[%s] Listening on http://localhost:%d', app.settings.env, port);
 });
-// }
-
-
-module.exports = app;

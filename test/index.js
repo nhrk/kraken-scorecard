@@ -1,24 +1,29 @@
-/*global describe:false, it:false, before:false, after:false, afterEach:false*/
+/*global describe:false, it:false, beforeEach:false, afterEach:false*/
 
 'use strict';
 
 
-var app = require('../index'),
-    kraken = require('kraken-js'),
+var kraken = require('kraken-js'),
+    express = require('express'),
     request = require('supertest'),
-    assert = require('assert');
+    spec = require('../lib/spec');
 
 
-describe('index', function () {
+describe('/', function () {
 
-    var mock;
+    var app, mock;
 
 
     beforeEach(function (done) {
-        kraken.create(app).listen(function (err, server) {
-            mock = server;
-            done(err);
-        });
+        app = express();
+        app.on('start', done);
+        app.use(kraken({
+            basedir: '.',
+            onconfig: spec(app).onconfig
+        }));
+
+        mock = app.listen(1337);
+
     });
 
 
@@ -33,7 +38,7 @@ describe('index', function () {
             .expect(200)
             .expect('Content-Type', /html/)
             .expect(/Hello, /)
-            .end(function(err, res){
+            .end(function (err, res) {
                 done(err);
             });
     });
