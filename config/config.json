@@ -75,6 +75,12 @@
             "module": {
                 "name": "path:./lib/locale"
             }
+        },
+
+        "compress": {
+            "enabled": true,
+            "priority": 10,
+            "module": "compression"
         }
     }
 

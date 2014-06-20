@@ -10,6 +10,7 @@
   "homepage": "https://github.com/nhrk/kraken-scorecard",
   "dependencies": {
     "adaro": "~0.1.5",
+    "compression": "^1.0.7",
     "dustjs-helpers": "~1.2.0",
     "dustjs-linkedin": "~2.3.4",
     "engine-munger": "^0.2.0",
