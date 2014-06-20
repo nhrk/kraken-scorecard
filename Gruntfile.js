@@ -2,7 +2,6 @@
 
 
 module.exports = function(grunt) {
-	console.log(require('path').resolve('tasks'));
 	// Load the project's grunt tasks from a directory
 	require('grunt-config-dir')(grunt, {
 		configDir: require('path').resolve('tasks')
