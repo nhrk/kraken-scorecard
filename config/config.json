@@ -1,5 +1,5 @@
 {
-    "port": 1377,
+
     "express": {
         "view cache": false,
         "view engine": "js",
@@ -16,18 +16,21 @@
                     {
                         "views": "config:express.views",
                         "view engine": "config:express.view engine",
+                        "specialization": "config:specialization",
                         "i18n": "config:i18n"
                     }
                 ]
             }
         }
     },
+    
 
     "i18n": {
         "contentPath": "path:./locales",
         "fallback": "en-US"
     },
-
+    
+    
 
     "middleware": {
 
@@ -43,6 +46,13 @@
             }
         },
 
+        "compress": {
+            "enabled": true,
+            "priority": 10,
+            "module": "compression"
+        },
+
+        
         "expressView": {
             "priority": 100,
             "enabled": true,
@@ -50,6 +60,7 @@
                 "name": "engine-munger/lib/expressView"
             }
         },
+        
 
         "fileNotFound": {
             "enabled": true,
@@ -64,24 +75,10 @@
             "enabled": true,
             "priority": 140,
             "module": {
-                "name" : "kraken-js/middleware/500",
+                "name": "kraken-js/middleware/500",
                 "arguments": [ "errors/500" ]
             }
-        },
-
-        "locale": {
-            "priority": 95,
-            "enabled": true,
-            "module": {
-                "name": "path:./lib/locale"
-            }
-        },
-
-        "compress": {
-            "enabled": true,
-            "priority": 10,
-            "module": "compression"
         }
-    }
 
+    }
 }

@@ -22,6 +22,7 @@
     "less": "~1.7.0",
     "localizr": "~0.1.0",
     "node-mime": "^1.0.0",
+    "node-sass": "^0.9.3",
     "request": "^2.34.0",
     "requirejs": "~2.1.11"
   },

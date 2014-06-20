@@ -5,8 +5,7 @@
 
 var kraken = require('kraken-js'),
     express = require('express'),
-    request = require('supertest'),
-    spec = require('../lib/spec');
+    request = require('supertest');
 
 
 describe('/', function () {
@@ -18,8 +17,7 @@ describe('/', function () {
         app = express();
         app.on('start', done);
         app.use(kraken({
-            basedir: '.',
-            onconfig: spec(app).onconfig
+            basedir: process.cwd()
         }));
 
         mock = app.listen(1337);

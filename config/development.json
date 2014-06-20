@@ -1,5 +1,5 @@
 {
-
+    
     "express": {
         "view cache": false,
         "view engine": "dust",
@@ -16,12 +16,14 @@
                     {
                         "views": "config:express.views",
                         "view engine": "config:express.view engine",
+                        "specialization": "config:specialization",
                         "i18n": "config:i18n"
                     }
                 ]
             }
         }
     },
+
     "middleware": {
 
         "devtools": {
@@ -32,15 +34,15 @@
                 "arguments": [
                     "path:./public",
                     "path:./.build",
-                    {
-                        "dust": {
+                    {   
+                        "template": {
                             "module": "kraken-devtools/plugins/dustjs",
                             "files": "/templates/**/*.js",
                             "base": "templates",
                             "i18n": "config:i18n"
                         },
-                        "less": {
-                            "module": "kraken-devtools/plugins/less",
+                        "css": {
+                            "module": "kraken-devtools/plugins/sass",
                             "files": "/css/**/*.css"
                         },
                         "copier": {
@@ -52,5 +54,4 @@
             }
         }
     }
-
 }
