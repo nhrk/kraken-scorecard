@@ -37,6 +37,24 @@ module.exports = function(grunt) {
 				stdin: true
 			},
 			command: 'pm2 reload all'
+		},
+		pm2_softReload: {
+			options: { // Options
+				stderr: true,
+				stdin: true,
+				callback: function(err, stdout, stderr, cb){
+					// console.log(this);
+					cb();	
+				}
+			},
+			command: 'pm2 reload all'
+		},
+		pm2_restart: {
+			options: { // Options
+				stderr: true,
+				stdin: true
+			},
+			command: 'pm2 restart all'
 		}
 	};
 };
