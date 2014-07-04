@@ -1,4 +1,4 @@
-#Setting up server to run Node.js app
+#Setting up server for a Node.js app
 
 ## Modify IPTABLES
 
@@ -8,29 +8,36 @@
     iptables -I INPUT <line number> -m state --state ESTABLISHED,RELATED -j ACCEPT
 
 ## Install (as required)
-> sudo.
+> sudo?
 
 	apt-get install sudo
 
 > [cURL](http://curl.haxx.se/)
 
-	sudo apt-get install curl
+	apt-get install curl
 
 > [Node.js](http://nodejs.org/)
 
-	sudo apt-get install nodejs
+	apt-get install nodejs
+
+> Or update Node.js
+
+	su
+	npm cache clean -f
+	npm install n -g
+	n stable
 
 > [npm](https://www.npmjs.org/) - Node package manager.
 
-	sudo apt-get install npm
+	apt-get install npm
 
 > [Github](https://github.com)
 
-	sudo apt-get install git
+	apt-get install git
 
 > [PM2](https://github.com/Unitech/pm2) - Process manager and load balancer for Node.js.
 
-	sudo npm install pm2@latest -g
+	npm install pm2@latest -g
 
 ## Create a different user to run app?
 	useradd -s /bin/bash -m -d /home/nodeapp -c "nodeapp" nodeapp
@@ -73,6 +80,9 @@
     }
 
 ## Setup daily cron for Logrotate (if not present)
+
+>/etc/cron.daily/logrotate
+
     #!/bin/sh
 
     test -x /usr/sbin/logrotate || exit 0
