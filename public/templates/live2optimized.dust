@@ -291,13 +291,17 @@
 	<script src="{domain}/navigation/cricinfo/ci/scorecard/js/min/templates.js?{mtimes.templates__js}"></script>
 	<script src="{domain}/navigation/cricinfo/ci/scorecard/js/min/plugin.js?{mtimes.plugin__js}"></script>
 	<script src="{domain}/navigation/cricinfo/ci/scorecard/js/lib/jquery.foundation.tabs.js"></script>
-	<!-- <script src="{domain}/navigation/cricinfo/ci/scorecard/js/src/app.js?{mtimes.app__js}"></script>
-	// <script src="{domain}/navigation/cricinfo/ci/scorecard/js/src/global.js?{mtimes.global__js}"></script> -->
+	{?crossOriginRequest}
 	<script src="http://questfx.net/cdn/js/scorecard/05may/app.js"></script>
 	<script src="http://questfx.net/cdn/js/scorecard/05may/global.js"></script>
 	<script src="{domain}/navigation/cricinfo/ci/scorecard/js/min/espn.gfx.js?{mtimes.espn__gfx__js}"></script>
 	<script src="http://questfx.net/cdn/js/scorecard/05may/matchcenter.js"></script>
-	<!-- <script src="{domain}/navigation/cricinfo/ci/scorecard/js/src/matchcenter.js?{mtimes.matchcenter__js}"></script> -->
+	{:else}
+	<script src="{domain}/navigation/cricinfo/ci/scorecard/js/src/app.js?{mtimes.app__js}"></script>
+	<script src="{domain}/navigation/cricinfo/ci/scorecard/js/src/global.js?{mtimes.global__js}"></script>
+	<script src="{domain}/navigation/cricinfo/ci/scorecard/js/min/espn.gfx.js?{mtimes.espn__gfx__js}"></script>
+	<script src="{domain}/navigation/cricinfo/ci/scorecard/js/src/matchcenter.js?{mtimes.matchcenter__js}"></script>
+	{/crossOriginRequest}
 	<script type="text/javascript" src="{domain}/navigation/cricinfo/ci/scorecard/js/lib/jquery.swipebox.js"></script>
 	<!-- <script src="http://questfx.net/cdn/js/lib/dust-full.min.js"></script>
 	<script src="http://questfx.net/cdn/js/scorecard/templates.js"></script> -->

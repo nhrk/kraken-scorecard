@@ -1,0 +1,15 @@
+{
+	"apps": [{
+		"name": "scorecard",
+		"script": "index.js",
+		"cwd": "./",
+		"error_file": "/var/log/node/scorecard.stderr.log",
+		"out_file": "/var/log/node/scorecard.stdout.log",
+		"exec_mode": "cluster_mode",
+		"port": 1377,
+		"instances": "max",
+		"env": {
+			"NODE_ENV": "production"
+		}
+	}]
+}
