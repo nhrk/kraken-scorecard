@@ -35,7 +35,7 @@
 
 	apt-get install git
 
-> [PM2](https://github.com/Unitech/pm2) - Process manager and load balancer for Node.js.
+> [PM2](https://github.com/Unitech/pm2) - Process manager for Node.js with load balancer.
 
 	npm install pm2@latest -g
 
