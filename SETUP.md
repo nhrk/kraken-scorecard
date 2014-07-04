@@ -52,11 +52,13 @@
 ```/etc/pm2/conf.d/```
 
 ## Add PM2 script to system startup
+
 >Run PM2 startup script generator
 
 ```pm2 startup debian```
 
 ##Setup Logrotate config
+
 >/var/logrotate.d/pm2
 
     /var/log/pm2/*.log {
