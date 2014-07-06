@@ -3,7 +3,6 @@
     "express": {
         "view cache": true,
         "view engine": "dust",
-        "x-powered-by": false,
         "views": "path:./public/templates"
     },
 
@@ -13,7 +12,7 @@
             "renderer": {
                 "method": "dust",
                 "arguments": [
-                    { "cache": false },
+                    { "cache": true },
                     {
                         "views": "config:express.views",
                         "view engine": "config:express.view engine",
