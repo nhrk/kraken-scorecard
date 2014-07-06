@@ -63,6 +63,7 @@
 >Run PM2 startup script generator
 
 	pm2 startup debian
+	pm2 save
 
 ##Setup Logrotate configs
 
