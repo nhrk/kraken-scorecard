@@ -14,7 +14,7 @@ module.exports = function(grunt) {
 	grunt.registerTask('build', ['jshint', 'sass', 'requirejs', 'i18n', 'copyto']);
 	grunt.registerTask('test', ['jshint', 'mochacli']);
 	grunt.registerTask('deploy', ['shell:git_pull', 'shell:npm_install']);
-	grunt.registerTask('rollout', ['build', 'shell:pm2_softReload']);
+	grunt.registerTask('rollout', ['build', 'shell:pm2_reload']);
 	/* PM2 functions */
 	grunt.registerTask('reload', ['shell:pm2_reload']);
 	grunt.registerTask('softReload', ['shell:pm2_softReload']);
